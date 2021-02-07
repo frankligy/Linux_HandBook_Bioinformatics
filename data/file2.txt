@@ -1,0 +1,4 @@
+id	col1	col3	col5
+i4	5	3	9
+i5	2	4	0
+i6	1	2	3

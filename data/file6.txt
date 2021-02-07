@@ -1,0 +1,5 @@
+index	col2	col3	col4
+i1	John	56	male
+i2	Mary	34	female
+i3	Frank	23	male
+i4	Chris	58	female
