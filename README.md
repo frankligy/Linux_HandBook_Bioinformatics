@@ -5,10 +5,10 @@ This repository contains all the insights, useful tricks, interesting usages for
 
 # Index
 
-1. [wc command]()
-2. [find,paste,xargs,cut commands]()
-3. [Understanding Linux and Shell]()
-4. [Shell data type]()
+1. [wc command](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/1_wc_command.md)
+2. [find,paste,xargs,cut commands](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/2_find_paste_cut_xargs.md)
+3. [Understanding Linux and Shell](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/3_understanding_linux.md)
+4. [Shell data type](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/4_data_type.md)
 5. stay tuned
 
 
