@@ -1,4 +1,4 @@
-# Find, xargs, paste, cut
+# Find command
 
 Imagine you want to search for all the .txt files in a parental folder, and you want to merge them together horizontally.
 
@@ -14,12 +14,5 @@ Explaination:
 
 ```paste``` is super useful to merge files horizontally.
 
-
-
-If you want to pick a certain a certain column.
-
-```
-cut -d '\t' -f 1
-```
 
 
