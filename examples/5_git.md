@@ -53,3 +53,12 @@ git checkout master
 git reset --hard commitID
 git push origin master
 ```
+
+How to construct `.gitignore` file?
+
+Please add `**/.DS_Store` in the file. `**` means any folder and its sub-folders.
+
+```
+# if you need to remove something already been staged or committed
+git rm file.txt
+```
