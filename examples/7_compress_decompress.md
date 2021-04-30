@@ -9,7 +9,15 @@ gunzip -c test.txt.gz > test.txt  # -c only to stdout, need to redirect
 zcat test.txt.gz  # same as gunzip -c
 ```
 
-2. `tar.gz file`, archive file
+2. `.zip file`
+
+```
+unzip file.zip  # original archive will not disapper
+unzip -l file.zip  #list the contents of a zip file
+unzip -n file.zip  #skip the content in the zip file that has already been decompressed and exist in current folder
+```
+
+3. `tar.gz file`, archive file
 
 ```
 tar -czvf folder.tar.gz folder
