@@ -9,7 +9,7 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 
 # Index
 
-1. [wc, cp, mv command](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/1_wc_command.md)
+1. [wc, cp, mv command](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/1_wc_mv_cp.md)
 2. [find commands](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/2_find_paste_cut_xargs.md)
 3. [Understanding Linux and Shell](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/3_understanding_linux.md)
 4. [Shell data type](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/4_data_type.md)
