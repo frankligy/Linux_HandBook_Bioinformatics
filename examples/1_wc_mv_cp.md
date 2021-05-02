@@ -1,8 +1,8 @@
-# WC command
+## WC command
 
 You can use `wc` utility to check the number of lines. Remember, it always count the number of newlines. So if you forget to press "enter" key in your last line, `wc -l` will return one less result. In order to check, using `cat` to view your file before using `wc`.
 
-## Examples
+
 
 Basic usage:
 ```
@@ -14,4 +14,19 @@ If you only needs the number `4`:
 ```
 cat ../data/file1.txt | wc -l
 #       4
+```
+
+## mv command
+
+```
+#rename
+mv old.txt new.txt
+mv -v /folder ../new_folder  # v means verbose, display what was moved
+```
+
+## cp command
+
+```
+# copy a folder
+cp -R /folder ../new_folder
 ```

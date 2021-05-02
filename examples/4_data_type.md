@@ -21,6 +21,7 @@ task2=${task:2:2}    #05
 
 echo ${text//[[:space:]]}   # remove all white space from a string
 
+
 ```
 
 ## int and float
