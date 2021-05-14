@@ -12,6 +12,8 @@ zcat test.txt.gz  # same as gunzip -c
 2. `.zip file`
 
 ```
+zip -r file.zip /folder1 /folder2   # zip several folders
+zip file.zip file1.txt file2.txt    # zip several txt files
 unzip file.zip  # original archive will not disapper
 unzip -l file.zip  #list the contents of a zip file
 unzip -n file.zip  #skip the content in the zip file that has already been decompressed and exist in current folder

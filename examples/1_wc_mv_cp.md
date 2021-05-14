@@ -22,6 +22,7 @@ cat ../data/file1.txt | wc -l
 #rename
 mv old.txt new.txt
 mv -v /folder ../new_folder  # v means verbose, display what was moved
+mv -v /folder/*.txt ../new_folder # extract certain files from old folder
 ```
 
 ## cp command
