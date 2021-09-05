@@ -18,6 +18,7 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 7. [compress, decompress, archive](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/7_compress_decompress.md)
 8. [Manipulate path of file](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/8_file_path.md)
 9. [Using Python to call Shell](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/9_python_interface.md)
-10. stay tuned
+10. [md5sum check](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/10_md5sum.md)
+11. stay tuned
 
 
