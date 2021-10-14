@@ -9,7 +9,7 @@ cat files_to_check.txt | xargs -L -P 10 md5sum > md5sum_hash_output.txt
 
 ### sequential, but programmatically check
 You first need to build a file (correct_md5sum_hash.txt) like below, two space in between, this is tricky because scripting langulage like Python pandas, it requires delimiter 
-to be string of length one. So please first one rarely-used delimiter like "#", then replace them with "  " double whitespace.
+to be string of length one. So please first replace with rarely-used delimiter like "#", then replace them with "  " double whitespace.
 ```bash
 9bc85c9cdbcc88403efa8cbb15044e59  ./fastq/file1.fastq.gz
 2198d365235604d0b3eb2a0280acc1b9  ./fastq/file2.fastq.gz

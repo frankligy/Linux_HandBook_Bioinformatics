@@ -19,6 +19,8 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 8. [Manipulate path of file](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/8_file_path.md)
 9. [Using Python to call Shell](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/9_python_interface.md)
 10. [md5sum check](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/10_md5sum.md)
-11. stay tuned
+11. [text wranling](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/11_comm_txt_wragling.md)
+12. [file and folder size](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/12_check_size.md)
+13. stay tuned
 
 
