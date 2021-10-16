@@ -19,3 +19,11 @@ result = subprocess.run(['head','-n','5','file1.txt'],stdout=subprocess.PIPE,uni
 # result here is a Context object
 result.stdout.split('\n')[:-1]  # will be a list, usually the last one is an empty element
 ```
+
+4. need to run long command
+```python
+ori_dir = os.getcwd()
+os.chdir(bed_folder_path)
+all_beds = subprocess.run("for file in *.bed; do echo $file; done",shell=True,stdout=subprocess.PIPE,universal_newlines=True).stdout.split('\n')[:-1]
+os.chdir(ori_dir)
+```
