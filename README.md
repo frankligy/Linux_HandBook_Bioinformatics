@@ -23,6 +23,7 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 12. [file and folder size](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/12_check_size.md)
 13. [common conda commands](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/13_conda.md)
 14. [Learn bam file](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/14_bam.md)
-15. stay tuned
+15. [Using bsub to submit jobs on cluster](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/15_BSUB.md)
+16. stay tuned
 
 
