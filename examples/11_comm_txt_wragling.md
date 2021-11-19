@@ -16,6 +16,13 @@ cut -d "\t" -c 2 intput.txt > output.txt
 ```
 
 
+### 3.split
+we want to split a file by row and each file contains 273 rows
+```
+split -l 273 --additional-suffix ".txt"
+```
+
+
 
 
 
