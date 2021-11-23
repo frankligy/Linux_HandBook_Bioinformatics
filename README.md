@@ -26,6 +26,8 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 15. [Using bsub to submit jobs on cluster](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/15_BSUB.md)
 16. [awk usage](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/16_awk.md)
 17. [grep usage](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/17_grep.md)
-18. stay tuned
+18. [display and kill process](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/18_process.md)
+19. [Downloading](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/19_download.md)
+20. stay tuned
 
 
