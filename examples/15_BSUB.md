@@ -10,6 +10,12 @@
 #BSUB -e /data/salomonis2/LabFiles/Frank-Li/job_dump/%J.err  # throw error
 ```
 
+notes:
+
+1. based on the disucssion with Paul and Roberto, it seems to set ```"span[hosts=1]"``` may be a better solution to force all the cores in one host.
+
+
+
 
 
 
