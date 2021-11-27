@@ -1,8 +1,9 @@
 ## grep
 
-1. grep multiple conditions
 
-```bash
-grep 'AAAWYLWEV\|AAGLQDCTM\|AARNIVRRA'
-```
+1. grep regular expression
+
+Please refer to this [link](https://linuxize.com/post/regular-expressions-in-grep/).
+
+
 

@@ -28,6 +28,7 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 17. [grep usage](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/17_grep.md)
 18. [display and kill process](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/18_process.md)
 19. [Downloading](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/19_download.md)
-20. stay tuned
+20. [sed](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/20_sed.md)
+21. stay tuned
 
 
