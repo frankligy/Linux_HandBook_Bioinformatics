@@ -1,6 +1,7 @@
 ## If condition
 
 ### it is required to have a whitespace in the two end within the square bracket
+### it is advisable to enclose your file path
 
 1. Basic logis
 
