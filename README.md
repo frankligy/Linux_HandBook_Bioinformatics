@@ -31,5 +31,6 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 20. [sed usage](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/20_sed.md)
 21. [Array](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/21_array.md)
 22. [string](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/22_string.md)
-23. stay tuned
+23. [If condition](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/23_if_condition.md)
+24. stay tuned
 

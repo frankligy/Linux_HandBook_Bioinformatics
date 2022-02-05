@@ -4,7 +4,7 @@
 
 ```
 gzip test.txt # will become test.txt.gz
-gunzip test.txt.gz # the gz file will diasppear
+gunzip test.txt.gz # the gz file will diasppear   # sometimes it will not work, using zcat can remedy that
 gunzip -c test.txt.gz > test.txt  # -c only to stdout, need to redirect
 zcat test.txt.gz > test.txt  # same as gunzip -c
 zcat < test.txt.gz > test.txt # may work better at MacOS
