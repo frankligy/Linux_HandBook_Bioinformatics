@@ -29,7 +29,7 @@ cd ~
 
 ### Configurtion:
 
-change the theme: open ~/.bash_profile(get executed when you are logged in) or ~/.bash_rc(everytime you open a new terminmal window, you should modify /.bash_rc on cluster, mac should modify /.bash_profile)
+change the theme: open ~/.bash_profile(get executed when you are logged in) or ~/.bashrc(everytime you open a new terminmal window, you should modify /.bash_rc on cluster, mac should modify /.bash_profile)
 
 
 To change the theme of the prompt, put the following to the abovementioned file:

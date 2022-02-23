@@ -13,7 +13,7 @@ sort -u input.txt > output.txt   # retain unique rows
 ### 2. cut
 
 ```bash
-cut -d "\t" -c 2 intput.txt > output.txt
+cut -d "\t" -f-4,5-5,7- intput.txt > output.txt
 ```
 
 
@@ -29,6 +29,11 @@ split -l 273 --additional-suffix ".txt"
 uniq -u file.txt
 # only repeat lines
 uniq -d file.txt
+```
+
+### 5. shuf
+```bash
+shuf input.txt
 ```
 
 
