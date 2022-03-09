@@ -1,18 +1,13 @@
 # Find command
 
-Imagine you want to search for all the .txt files in a parental folder, and you want to merge them together horizontally.
-
+```bash
+find . -type -f ! -name '*.raw' -exec rm {} \;
+find . -type -d -exec rm -r {} \;
 ```
-find . -type f -name "*.txt" | xargs paste
-```
 
-Explaination:
+For some reason, I feel the quotation is required, the `\;` in the end means you need `;` to end the `exec`, and you also need 
+`\` to escape the `;`.
 
-```find``` is useful to find all files even the files sit under the child folders.
-
-```xargs``` allows you to direct output to utilities that are not able to read the input line by line.
-
-```paste``` is super useful to merge files horizontally.
 
 
 

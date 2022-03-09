@@ -41,6 +41,10 @@ while read -r var1 var2; do whatever; done < test.txt
 for file in *.fastq.gz; do echo $file; done
 ```
 
+```bash
+for ((i=0; i<10; i++)); do echo $i; done
+```
+
 5. Another useful trick is to split string and assign the subset to more than 1 variables.
 
 ```bash
