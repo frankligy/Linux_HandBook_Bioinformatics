@@ -20,6 +20,15 @@ unzip -l file.zip  #list the contents of a zip file
 unzip -n file.zip  #skip the content in the zip file that has already been decompressed and exist in current folder
 ```
 
+Specifically, `unzip` sometimes will run into error when decompressing files downloaded/compiled by Microsoft, in this case, best way is to 
+first update the zip file using the utility `fix-onedrive-zip` downloadable from https://github.com/pmqs/Fix-OneDrive-Zip, make sure your `perl` is installed and your `fix-onedrive-zip` executable is in the same folder as the zip file you want to update, then:
+
+```
+perl fix-onedrive-zip file.zip
+```
+
+Now the updated zip file can be used for `unzip` as usual.
+
 3. `tar.gz file`, archive file
 
 ```
