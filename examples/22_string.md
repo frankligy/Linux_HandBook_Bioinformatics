@@ -21,3 +21,11 @@ arrbn=(${bn//./ })  # split by . (replace with space), then convert to array
 id=${arrbn[1]}  # YBX3_shRNA_K562
 ```
 
+
+### concatenate
+```bash
+x=pattern
+y=${x}_pattern
+x+='_pattern'
+```
+

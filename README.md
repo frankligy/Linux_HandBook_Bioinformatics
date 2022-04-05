@@ -32,5 +32,5 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 21. [Array](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/21_array.md)
 22. [string](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/22_string.md)
 23. [If condition](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/23_if_condition.md)
-24. stay tuned
+24. [numerical calculation](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/24_numerical.md)
 
