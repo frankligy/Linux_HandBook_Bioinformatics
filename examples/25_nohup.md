@@ -10,7 +10,7 @@ nohup bash -c "sleep 20 && echo hi"
 ```
 
 Now to check the status of your job running in the background, use `ps` command, and the process id associated with you nohup command
-is the one that you should be looking for.
+is the one that you should be looking for. You can also use `top` command, which will output more comprehensive processes that are ongoing.
 
 ```
 ps
