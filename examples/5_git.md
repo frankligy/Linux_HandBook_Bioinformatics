@@ -74,4 +74,4 @@ ssh-keygen -t ed25519 -C "<comment>"
 ssh-keygen -t rsa -b 2048 -C "<comment>"
 ```
 
-The key will be stored at `~/.ssh/`, which will be used for the configuration.
+The key will be stored at `~/.ssh/`, which will be used for the configuration, you can put your public local key to the GitLab server, so that they are linked.
