@@ -29,7 +29,7 @@ loaded via a namespace (and not attached):
 [1] compiler_4.1.0 tools_4.1.0 
 ```
 
-Then, where are the base R dependencies were installed? You can see the path of each installed package in the resultant dataframe (`/Library/Frameworks/R.framework/Versions/4.1/Resources/library`). As you can see, dependencies installed in each R version won't conflict with each other.
+Then, where are the base R dependencies were installed? You can see the path of each installed package in the resultant dataframe (`/Library/Frameworks/R.framework/Versions/4.1/Resources/library`). As you can see, dependencies installed in each R version won't conflict with each other. A separate note is, if using anaconda, the R packages should be in (`/opt/anaconda3/envs/cytospace/lib/R/library`)
 
 ```R
 df <- installed.packages()
