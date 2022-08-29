@@ -41,7 +41,7 @@ gbalance -u ligk2e -h
 # set up internet connection
 export http_proxy=http://username:password@bmiproxyp.chmcres.cchmc.org:80
 export https_proxy=http://username:password@bmiproxyp.chmcres.cchmc.org:80
-# check to see if getting http 200 code
+# check to see if getting http 200 code, using website what hasn't been whitelisted otherwise it doesn't matter
 curl -I https://linuxhint.com/
 curl -I http://linuxhint.com/
 ```
