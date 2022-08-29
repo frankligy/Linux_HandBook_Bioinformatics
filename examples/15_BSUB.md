@@ -36,6 +36,16 @@ module load gold
 gbalance -u ligk2e -h
 ```
 
+6. How to check internet connection?
+```bash
+# set up internet connection
+export http_proxy=http://username:password@bmiproxyp.chmcres.cchmc.org:80
+export https_proxy=http://username:password@bmiproxyp.chmcres.cchmc.org:80
+# check to see if getting http 200 code
+curl -I https://linuxhint.com/
+curl -I http://linuxhint.com/
+```
+
 
 
 
