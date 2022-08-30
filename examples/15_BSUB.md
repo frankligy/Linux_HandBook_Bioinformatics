@@ -1,7 +1,7 @@
 ## BSUB command
 
 
-1. submit jobs, in your bash script, you must add shebang as `#!/bin/bash`, and `#BSUB` is recognized by `bsub` command. You can define global variable between shebang and `#BSUB`.
+1. submit jobs, in your bash script, and `#BSUB` is recognized by `bsub` command.
 
 ```bash
 #BSUB -W 10:00   # time
