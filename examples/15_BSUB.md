@@ -1,12 +1,13 @@
 ## BSUB command
 
 
-1. submit jobs
+1. submit jobs, in your bash script, you must add shebang as `#!/bin/bash`, and `#BSUB` is recognized by `bsub` command. You can define global variable between shebang and `#BSUB`.
+
 ```bash
 #BSUB -W 10:00   # time
-#BSUB -M 50000   # memory, in byte
+#BSUB -M 50000   # memory, in byte, you can also use format like 500G 
 #BSUB -n 10      # cores
-#BSUB -R "span[hosts=1]"   # make sure cores will be on the same host, otherwise, non MPI-aware program won't able to detect cores in another host
+#BSUB -R "rusage[mem=50G] span[hosts=1]"   # make sure cores will be on the same host, otherwise, non MPI-aware program won't able to detect cores in another host
 #BSUB -J md5sum   # name
 #BSUB -o /data/salomonis2/LabFiles/Frank-Li/job_dump/%J.out  # throw output
 #BSUB -e /data/salomonis2/LabFiles/Frank-Li/job_dump/%J.err  # throw error
@@ -15,6 +16,7 @@
 2. interactive session
 ```bash
 bsub -W 3:00 -M 100000 -n 1 -Is bash
+bsub -W 3:00 -R "rusage[mem=100G] span[hosts=1]" -M 100G -n 1 -Is /bin/bash
 ```
 
 3. inspect jobs
