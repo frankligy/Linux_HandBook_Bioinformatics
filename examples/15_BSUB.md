@@ -13,6 +13,13 @@
 #BSUB -e /data/salomonis2/LabFiles/Frank-Li/job_dump/%J.err  # throw error
 ```
 
+If using gpu, here's some additinal directive:
+
+```bash
+#BSUB -q "gpu-v100"
+#BSUB -gpu "num=1"
+```
+
 2. interactive session
 ```bash
 bsub -W 3:00 -M 100000 -n 1 -Is bash
