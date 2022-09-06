@@ -75,7 +75,10 @@ Execution halted
 Error: package ‘cpp11’ 0.3.1 was found, but >= 0.4.2 is required by ‘tweenr’
 ```
 
-Here, we just need to update `rlang` or `cpp11` installed in base environment.
+Here, we just need to update `rlang` or `cpp11` installed in base environment. Remember, sometimes re-install only 
+modify the one in the renv not in the base (the one in the base may appear as package.1 when viewed as R doesn't allow duplicated index), so you may need to first `remove.packages(package,path/to/base_dir)` then re-install, and re-start the session if necessary.
+
+
 
 
 
