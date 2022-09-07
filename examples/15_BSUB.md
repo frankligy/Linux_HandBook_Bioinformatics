@@ -5,8 +5,8 @@
 
 ```bash
 #BSUB -W 10:00   # time
-#BSUB -M 50000   # memory, in byte, you can also use format like 500G 
-#BSUB -n 10      # cores
+#BSUB -M 500G    # you can also do 500000
+#BSUB -n 10      # cores you requested, this is distinct from multiprocessing.cpu_counts(), the latter tells you all the available cores in the host.
 #BSUB -R "rusage[mem=50G] span[hosts=1]"   # make sure cores will be on the same host, otherwise, non MPI-aware program won't able to detect cores in another host, also rusage is used to define how much memory each host should have for MPI-aware program
 #BSUB -J md5sum   # name
 #BSUB -o /data/salomonis2/LabFiles/Frank-Li/job_dump/%J.out  # throw output
