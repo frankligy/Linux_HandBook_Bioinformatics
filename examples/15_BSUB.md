@@ -55,6 +55,13 @@ curl -I https://linuxhint.com/
 curl -I http://linuxhint.com/
 ```
 
+6. How to run docker?
+```bash
+bsub -W 3:00 -M 100000 -n 1 -q docker -Is bash
+cd /scratch/ligk2e  # assuming Dockerfile is there
+docker build --build-arg http_proxy=password@bmiproxyp.chmcres.cchmc.org:80>http://username:password@bmiproxyp.chmcres.cchmc.org:80 --build-arg https_proxy=password@bmiproxyp.chmcres.cchmc.org:80>http://username:password@bmiproxyp.chmcres.cchmc.org:80 --no-cache -t icgc .
+```
+
 
 
 
