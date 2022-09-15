@@ -53,6 +53,10 @@ for x in iter:   # class 'pysam.libcalignedsegment.AlignedSegment' for each x
 
 ```
 
+# Header
+
+![header](../data/sam_header.png)
+
 # resorces
 1. [Format definition, Wiki](https://en.wikipedia.org/wiki/SAM_(file_format))
 2. [soft and hard clip, padded](https://davetang.org/wiki/tiki-index.php?page=SAM)
