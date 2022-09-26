@@ -60,3 +60,18 @@ echo 'test' 1>file.log 2>&1
 # meaning direct stdout (1) to file.log and append stderr (2) to stdout(1)
 ```
 
+Check Linux core:
+
+```
+Singularity altanalyze:/> cat /etc/os-release
+PRETTY_NAME="Debian GNU/Linux 10 (buster)"
+NAME="Debian GNU/Linux"
+VERSION_ID="10"
+VERSION="10 (buster)"
+VERSION_CODENAME=buster
+ID=debian
+HOME_URL="https://www.debian.org/"
+SUPPORT_URL="https://www.debian.org/support"
+BUG_REPORT_URL="https://bugs.debian.org/"
+```
+
