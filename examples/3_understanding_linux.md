@@ -53,5 +53,10 @@ export PATH=/data/home/mjchen/app/package:$PATH
 # this is also how to make a permenant variable
 ```
 
+Standard output and error:
 
+```
+echo 'test' 1>file.log 2>&1
+# meaning direct stdout (1) to file.log and append stderr (2) to stdout(1)
+```
 
