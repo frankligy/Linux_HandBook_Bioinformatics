@@ -36,6 +36,21 @@ uniq -d file.txt
 shuf input.txt
 ```
 
+### 6. concat
+```bash
+# vertically
+cat file1.txt file2.txt
+# horizontally
+paste file1.txt file2.txt
+```
+
+### 7. comm
+```bash
+# 1,2,3 mean unique to file1, unique to file2, comm to file1+file2
+# -12 means suppress 1 and 2
+comm -12 file1.txt file2.txt
+```
+
 
 
 
