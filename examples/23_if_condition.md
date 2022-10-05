@@ -1,9 +1,9 @@
 ## If condition
 
 ### it is required to have a whitespace in the two end within the square bracket
-### it is advisable to enclose your file path
+### it is advisable to enclose string variable
 
-1. Basic logis
+1. Basic logis for numerical
 
 ```bash
 if [ $var != 0 ]     # ! means negation, -o means or (|| is the same), -a means and (&&)
@@ -17,15 +17,21 @@ else
 fi
 ```
 
-2. Whether file and folder exist or not
+2. special symbol for special meaning
 
 ```bash
 if [ -d folder ]; then
     echo "folder exists"
 fi
 
-if [-f file ]; then
+if [ -f file ]; then
     echo "file exists"
+fi
+
+if [ ! -z "$string" ]; then
+    echo "variable is not empty"
+else
+    echo "variable is empty"
 fi
 ```
 
