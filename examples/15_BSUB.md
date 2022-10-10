@@ -20,6 +20,13 @@ If using gpu, here's some additinal directive:
 #BSUB -gpu "num=1"
 ```
 
+In our cluster, we can specify -gpu as 2, and then set the CUDA device, here -n doesn't matter any more if using gpu
+
+```bash
+#BSUB -gpu "num=2"
+export CUDA_VISIBLE_DEVICES=0,1
+```
+
 2. interactive session
 ```bash
 bsub -W 3:00 -M 100000 -n 1 -Is bash
