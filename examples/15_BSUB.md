@@ -4,7 +4,7 @@
 1. submit jobs, in your bash script, and `#BSUB` is recognized by `bsub` command.
 
 ```bash
-#BSUB -W 10:00   # time
+#BSUB -W 10:00   
 #BSUB -M 500G    # you can also do 500000
 #BSUB -n 10      # cores you requested, this is distinct from multiprocessing.cpu_counts(), the latter tells you all the available cores in the host.
 #BSUB -R "rusage[mem=50G] span[hosts=1]"   # make sure cores will be on the same host, otherwise, non MPI-aware program won't able to detect cores in another host, also rusage is used to define how much memory each host should have for MPI-aware program
@@ -16,11 +16,13 @@
 If using gpu, here's some additinal directive:
 
 ```bash
-#BSUB -q "gpu-v100"
+#BSUB -q "gpu-v100"   # you can also do "amdgpu" for A100 gpu
 #BSUB -gpu "num=1"
 ```
 
-In our cluster, we can specify -gpu as 2, and then set the CUDA device, here -n doesn't matter any more if using gpu
+In our cluster, we can specify -gpu as 2, and then set the CUDA device, here -n doesn't matter any more if using gpu,
+but we need to know to use multiple gpu, the code needs to be written in a specific way, otherwise, set gpu=2 doesn't help at all.
+`export CUDA_VISIBLE_DEVICES=1` can send job to gpu1 instead of gpu2.
 
 ```bash
 #BSUB -gpu "num=2"
