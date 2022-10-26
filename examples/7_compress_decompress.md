@@ -3,7 +3,7 @@
 1. `.gz file`, common in Unix system
 
 ```
-gzip test.txt # will become test.txt.gz
+gzip test.txt # will become test.txt.gz, you can add -c and redirect to make sure the original file won't be deleted
 gunzip test.txt.gz # the gz file will diasppear   # sometimes it will not work, using zcat can remedy that
 gunzip -c test.txt.gz > test.txt  # -c only to stdout, need to redirect
 zcat test.txt.gz > test.txt  # same as gunzip -c
