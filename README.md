@@ -35,5 +35,6 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 24. [numerical calculation](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/24_numerical.md)
 25. [Run in background, process, kill](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/25_nohup.md)
 26. [How to install R packages?](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/26_install_R_packages.md)
-27. stay tuned
+27. [Multiple lines for if and foor loop](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/27_multiple_lines.md)
+28. stay tuned
 
