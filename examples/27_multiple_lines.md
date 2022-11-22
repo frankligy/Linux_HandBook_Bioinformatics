@@ -1,5 +1,6 @@
 ## Example on how to expand If and For in multiple lines
 
+```bash
 ORI=/data/salomonis2/LabFiles/Frank-Li/neoantigen/MS/schuster/MS
 NOW=/data/salomonis2/LabFiles/Frank-Li/neoantigen/revision/ovarian/MS
 
@@ -16,3 +17,4 @@ do
     fi
     cd $ORI
 done
+```
