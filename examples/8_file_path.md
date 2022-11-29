@@ -4,7 +4,8 @@
 Get basename
 
 ```
-basename /path/sub/file.txt .txt  # will be "file"
+basename -s .txt /path/sub/file.txt   # will be "file"
+basename -s .R1.fastq.gz path/sub/sample.R1.fastq.gz
 ```
 
 Get basename + abspath
