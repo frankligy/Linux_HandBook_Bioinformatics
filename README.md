@@ -36,5 +36,6 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 25. [Run in background, process, kill](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/25_nohup.md)
 26. [How to install R packages?](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/26_install_R_packages.md)
 27. [Multiple lines for if and foor loop](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/27_multiple_lines.md)
-28. stay tuned
+28. [For and Seq command for iterating numerical variables](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/28_for_and_seq.md)
+29. stay tuned
 

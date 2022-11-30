@@ -5,7 +5,7 @@
 2. using `cat` and associated functions like `xargs` and `parallel`
 
 ```bash
-# built-in function
+# built-in function, -L (one argument per line), the content passed from cat will be grouped as a {} and sent to the shell command
 cat test.txt | xargs -L 1 -P 10 -I {} sh -c "curl {}"
 # custom function
 export -f custom_function
