@@ -9,6 +9,7 @@
 #BSUB -n 10      # cores you requested, this is distinct from multiprocessing.cpu_counts(), the latter tells you all the available cores in the host.
 #BSUB -R "rusage[mem=50G] span[hosts=1]"   # make sure cores will be on the same host, otherwise, non MPI-aware program won't able to detect cores in another host, also rusage is used to define how much memory each host should have for MPI-aware program
 #BSUB -J md5sum   # name
+#BSUB -m "bmi-host-name"  # submit to a specific node, not recommended to use in general instead letting the LSF scheduler do the job
 #BSUB -o /data/salomonis2/LabFiles/Frank-Li/job_dump/%J.out  # throw output
 #BSUB -e /data/salomonis2/LabFiles/Frank-Li/job_dump/%J.err  # throw error
 ```
