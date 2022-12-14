@@ -68,12 +68,15 @@ curl -I http://linuxhint.com/
 6. How to run docker?
 ```bash
 bsub -W 3:00 -M 100000 -n 1 -q docker -Is bash
-cd /scratch/ligk2e  # assuming Dockerfile is there
+cd /scratch/ligk2e  # assuming Dockerfile is there, the file needs to be in /scratch folder when using docker
 docker build --build-arg http_proxy=http://username:password@bmiproxyp.chmcres.cchmc.org:80 --build-arg https_proxy=http://username:password@bmiproxyp.chmcres.cchmc.org:80 --no-cache -t icgc .
 
 # for pulling
 proxy_on
 docker pull frankligy123/altanalyze:0.5.0.1
+
+# if want to have nvidia-docker and gpu
+bsub -W 3:00 -M 100G -n 1 -q amdgpu -gpu "num=1" -Is bash
 ```
 
 
