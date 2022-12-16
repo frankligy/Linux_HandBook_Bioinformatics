@@ -25,6 +25,16 @@ In our cluster, we can specify -gpu as 2, and then set the CUDA device, here -n 
 but we need to know to use multiple gpu, the code needs to be written in a specific way, otherwise, set gpu=2 doesn't help at all.
 `export CUDA_VISIBLE_DEVICES=1` can send job to gpu1 instead of gpu2.
 
+It seems that we have at least 5 nodes that have gpu-v100 installed, each node has two GPUs, so you can also use -m paramter to submit to specific node if permitted.
+
+```
+bmi-r740-01        ok              -     16      2      2      0      0      0
+bmi-r740-02        ok              -     16      0      0      0      0      0
+bmi-r740-03        ok              -     16      1      1      0      0      0
+bmi-r740-04        ok              -     16      1      1      0      0      0
+bmi-r740-05        ok              -     16      0      0      0      0      0
+```
+
 ```bash
 #BSUB -gpu "num=2"
 export CUDA_VISIBLE_DEVICES=0,1
