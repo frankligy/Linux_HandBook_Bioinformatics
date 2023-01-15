@@ -14,7 +14,7 @@ conda list -n env sctriangulate
 
 # activate
 conda activate env
-source activate env
+source activate env  # do it on cluster
 
 # remove
 conda remove -n env scipy
@@ -37,6 +37,13 @@ pip install --upgrade sctriangulate
 pip uninstall sctriangulate
 
 ```
+
+# mamba 
+
+As you may notice, conda, when solving environment, can be super slow, sometimes even impossible, now you should use mamba, in Unix-based system, you are 
+recommended to download mamba shell script (https://github.com/conda-forge/miniforge#mambaforge) and run it to install it. When I installed it on my Mac, it by default will be stored at /Users/ligk2e. From here, mamba is a drop-in replacement for conda when manipulating dependencies for the mamba-created environment.
+
+When you need to switch to previously-installed conda environment, you need to use full environment path to activate them, and I prefer to use conda for manupulating previous environment.
 
 
 
