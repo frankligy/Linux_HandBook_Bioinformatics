@@ -17,7 +17,7 @@
 If using gpu, here's some additinal directive:
 
 ```bash
-#BSUB -q "gpu-v100"   # you can also do "amdgpu" for A100 gpu
+#BSUB -q "gpu-v100"   # you can also do "gpu-a100" for A100 gpu, A100 seems to have higher RAM as well
 #BSUB -gpu "num=1"
 ```
 
@@ -39,6 +39,7 @@ bmi-r740-05        ok              -     16      0      0      0      0      0
 #BSUB -gpu "num=2"
 export CUDA_VISIBLE_DEVICES=0,1
 ```
+
 
 2. interactive session
 ```bash
