@@ -23,6 +23,10 @@ conda remove -n env --all
 # deactivate
 conda deactivate # to exit base, need to deactivate twice
 
+# export
+conda env export environment.yml # make sure no prefix, and the name is just the name, no prefix
+conda env create -f environment.yml -p ./name_env
+
 # check the available channels
 conda config --show channels
 conda config -add channels bioconda
