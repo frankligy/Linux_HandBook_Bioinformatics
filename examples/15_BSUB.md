@@ -84,7 +84,8 @@ docker build --build-arg http_proxy=http://username:password@bmiproxyp.chmcres.c
 
 # for pulling
 proxy_on
-docker pull frankligy123/altanalyze:0.5.0.1
+docker pull frankligy123/altanalyze:0.5.0.1 # docker image will stay at the node until Friday
+
 
 # if want to have nvidia-docker and gpu
 bsub -W 3:00 -M 100G -n 1 -q amdgpu -gpu "num=1" -Is bash
