@@ -53,3 +53,19 @@ module load sratoolkit/2.10.4
 vdb-decrypt --ngc redacted.ngc 85634  # njc file needs to go to dbGap download link page, "get repository key"
 ```
 
+6. downlaod EGA
+
+We need to first get the permission through a very complicated process, after that, 
+
+```bash
+# instructions: https://github.com/EGA-archive/ega-download-client
+# build a mamba env and install python3.7 and pyega3
+# the credential file is the username and password they give you the permission for certain study
+# EGAD is data, EGAS is study, EGAF is actual file that will be downloaded
+conda activate ./pyega3_mamba_env
+pyega3 -cf credential_file.json fetch EGAD00001005097 --output-dir ./
+```
+
+7. download SRA from S3 bucket
+
+Occasionally there will be some issues for the deposited sra file on the website, so using the raw S3 bucket maybe a workaround. Like in this [SRR page](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=SRR13279452&display=data-access), you have both AWS and GCP cloud copy of this file. If it is "Free Egress", then you can directly download. If not, then you need to provide a bucket (charge will incur) using [SRA data delivery service](https://www.ncbi.nlm.nih.gov/Traces/cloud-delivery/), you need to have eRA account and bucket name.
