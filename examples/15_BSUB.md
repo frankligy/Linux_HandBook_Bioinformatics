@@ -1,13 +1,14 @@
-## BSUB command
+## BSUB command on LSF scheduler
 
 
 1. submit jobs, in your bash script, and `#BSUB` is recognized by `bsub` command.
 
 ```bash
+#!/bin/bash
 #BSUB -W 10:00   
 #BSUB -M 500G    # you can also do 500000
 #BSUB -n 10      # cores you requested, this is distinct from multiprocessing.cpu_counts(), the latter tells you all the available cores in the host.
-#BSUB -R "rusage[mem=50G] span[hosts=1]"   # make sure cores will be on the same host, otherwise, non MPI-aware program won't able to detect cores in another host, also rusage is used to define how much memory each host should have for MPI-aware program
+#BSUB -R "rusage[mem=50G] span[hosts=1]"   # hosts=1 make sure cores will be on the same host, otherwise, non MPI-aware program won't able to detect cores in another host. This can also be achieved by [ptile=10] which instruct each node should have 10 cores. Also rusage is used to define how much memory each core should, in this case, it should be 50G, it doesn't have to set becasue it can be automatically calculated
 #BSUB -J md5sum   # name
 #BSUB -m "bmi-host-name"  # submit to a specific node, not recommended to use in general instead letting the LSF scheduler do the job
 #BSUB -o /data/salomonis2/LabFiles/Frank-Li/job_dump/%J.out  # throw output
@@ -45,6 +46,7 @@ export CUDA_VISIBLE_DEVICES=0,1
 ```bash
 bsub -W 3:00 -M 100000 -n 1 -Is bash
 bsub -W 3:00 -R "rusage[mem=100G] span[hosts=1]" -M 100G -n 1 -Is /bin/bash
+bsub -W 3:00 -M 100000 -n 1 /file.py # assuming it has shebang to be an executable
 ```
 
 3. inspect jobs

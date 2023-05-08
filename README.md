@@ -23,7 +23,7 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 12. [file and folder size](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/12_check_size.md)
 13. [common conda commands](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/13_conda.md)
 14. [Learn bam file](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/14_bam.md)
-15. [Using bsub to submit jobs on cluster](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/15_BSUB.md)
+15. [LSF job scheduler](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/15_BSUB.md)
 16. [awk usage](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/16_awk.md)
 17. [grep usage](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/17_grep.md)
 18. [display and kill process](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/18_process.md)
@@ -37,5 +37,6 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 26. [How to install R packages?](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/26_install_R_packages.md)
 27. [Multiple lines for if and foor loop](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/27_multiple_lines.md)
 28. [For and Seq command for iterating numerical variables](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/28_for_and_seq.md)
-29. stay tuned
+29. [slurm job scheduler](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/29_SBATCH.md)
+30. stay tuned
 
