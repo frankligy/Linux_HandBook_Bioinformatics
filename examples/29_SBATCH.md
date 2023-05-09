@@ -68,5 +68,9 @@ scp path_in_local kid@bigpurple.nyumc.org:full_path_to_target
 sbatch example.sbatch
 ```
 
+## GUI
+
+Different from CCHMC server, you can not map the drive to Finder, you have to use Filezilla which may have something to do with the network used here.
+You can also use Ondemand (https://ondemand.hpc.nyumc.org) to check files, jobs, launch shell, interative apps and finally the mate desktop.
 
 
