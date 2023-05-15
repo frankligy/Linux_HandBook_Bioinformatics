@@ -59,12 +59,13 @@ scp path_in_local kid@bigpurple.nyumc.org:full_path_to_target
 # sbatch command and directive in file
 
 #!/bin/bash
+#SBATCH --partition=cpu_medium
 #SBATCH --nodes=1
-#SBATCH --ntasks=1
-#SBATCH --cpus-per-task=2
-#SBATCH --time=2-00:00:00
-#SBATCH --mem=4G
-#SBATCH --gres=gpu:a100:4
+#SBATCH --ntasks-per-node=1
+#SBATCH --time=1-00:00:00
+#SBATCH --mem=100Gb
+#SBATCH --job-name="data_transfer"
+#SBATCH --output=/gpfs/data/yarmarkovichlab/Frank/job_dump/data_transfer.out
 
 sbatch example.sbatch
 ```
@@ -77,5 +78,9 @@ flags are as below:
 
 Different from CCHMC server, you can not map the drive to Finder, you have to use Filezilla which may have something to do with the network used here.
 You can also use Ondemand (https://ondemand.hpc.nyumc.org) to check files, jobs, launch shell, interative apps and finally the mate desktop.
+
+## Mount
+
+CCHMC use SMB share so you can directly use Finder, here you have to use SFTP through Filezilla, please use bigpurple.nyumc.org and port 22
 
 
