@@ -1,11 +1,11 @@
 ## SSH authentification
 
 You can use your username and password to log in server like GitLab, using SFTP for remote server, etc.
-But you can also set up a ssh key pair such that you have a private key (~/.ssh/id_rsa) stored at your computer, and
-you can copy your public key (~/.ssh/id_rsa.pub) to the remote server, so that everytime, you don't need to type password anymore.
+But you can also set up a ssh key pair such that you have a private key `(~/.ssh/id_rsa)` stored at your computer, and
+you can copy your public key `(~/.ssh/id_rsa.pub)` to the remote server, so that everytime, you don't need to type password anymore.
 It will first search private key, map to public key and see if the public key is stored in the remote server, if the answer is yes,
-then the connection will be established. The public key will be stored at the remote (~/.ssh/authorized_keys). Also in your local computer,
-there will be a file named (~/.ssh/known_hosts), this is whitelisted hosts that we know are safe.
+then the connection will be established. The public key will be stored at the remote `(~/.ssh/authorized_keys)`. Also in your local computer,
+there will be a file named `(~/.ssh/known_hosts)`, this is whitelisted hosts that we know are safe.
 
 # generate pair
 
