@@ -47,6 +47,7 @@ REDHAT_SUPPORT_PRODUCT_VERSION="7.9"
 ```bash
 # check all partition(queue) and the nodes
 # please refer to http://bigpurple-ws.nyumc.org/wiki/index.php/Getting-Started
+# please refer to the bigpurple slides deck if needed
 sinfo
 
 # interactive job
@@ -67,6 +68,10 @@ scp path_in_local kid@bigpurple.nyumc.org:full_path_to_target
 
 sbatch example.sbatch
 ```
+
+flags are as below:
+
+![flag](../data/bigpurple_flags.png)
 
 ## GUI
 
