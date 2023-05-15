@@ -63,15 +63,3 @@ Please add `**/.DS_Store` in the file. `**` means any folder and its sub-folders
 git rm file.txt
 ```
 
-How about SSH access?
-
-You can either use password (HTTP), or SSH key to access the server (including the on-premise and cloud server, GitHub, etc). For SSH key, you need to first generate your local key pair (public and private):
-
-```
-# ed25518
-ssh-keygen -t ed25519 -C "<comment>"
-# 2048 bit RSA
-ssh-keygen -t rsa -b 2048 -C "<comment>"
-```
-
-The key will be stored at `~/.ssh/`, which will be used for the configuration, you can put your public local key to the GitLab server, so that they are linked.
