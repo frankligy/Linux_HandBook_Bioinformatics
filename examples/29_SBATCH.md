@@ -97,6 +97,7 @@ CCHMC use SMB share so you can directly use Finder to mount, here you have to us
 ```
 sbatch "/Applications/Visual Studio Code.app" -open
 out "/System/Applications/TextEdit.app" -open
+err "/System/Applications/TextEdit.app" -open
 ```
 
 Alternatively, you can use sshfs (https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) to mount to finder.
