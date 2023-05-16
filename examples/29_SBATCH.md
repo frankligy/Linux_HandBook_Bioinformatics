@@ -81,6 +81,11 @@ You can also use Ondemand (https://ondemand.hpc.nyumc.org) to check files, jobs,
 
 ## Mount
 
-CCHMC use SMB share so you can directly use Finder, here you have to use SFTP through Filezilla, please use bigpurple.nyumc.org and port 22
+CCHMC use SMB share so you can directly use Finder, here you have to use SFTP through Filezilla, please use bigpurple.nyumc.org and port 22. When using filezilla, you need to change the default application for opening various file types in `Edit` -> `Settings` -> `File association`, and type something like below:
+
+```
+sbatch "/Applications/Visual Studio Code.app" -open
+out "/System/Applications/TextEdit.app" -open
+```
 
 
