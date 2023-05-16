@@ -57,7 +57,7 @@ squeue -u lig08
 scancel -i jobid
 sacct -X -j jobid
 scontrol show jobid=jobid
-scontrol update JobId=6474 Partition=cpu_short
+scontrol update JobId=6474 Partition=cpu_short  # first use show then update
 man command  # to check full manual
 
 # interactive job
@@ -100,4 +100,15 @@ out "/System/Applications/TextEdit.app" -open
 err "/System/Applications/TextEdit.app" -open
 ```
 
-Alternatively, you can use sshfs (https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) to mount to finder.
+Alternatively, you can use sshfs (https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) to mount to finder. For Mac, particularly we need to download SSHFS and FUSE follow this tutorial (https://github.com/osxfuse/osxfuse/wiki/SSHFS), after that. You can start the mounting:
+
+```bash
+# make sure sshfs has the full disk path, sshfs binary is usually at /usr/local/bin/sshfs
+sudo sshfs -o allow_other,default_permissions sammy@your_other_server:~/ /Volumes/nyu_home
+
+# you may need to modify the permission
+sudo chmod -R 777 /Volumes/nyu_home
+
+# unmount
+sudo umount /Volumes/nyu_home
+```
