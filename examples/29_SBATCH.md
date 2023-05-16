@@ -18,6 +18,10 @@ ssh kid@bigpurple.nyumc.org
 # scratch
 /gpfs/scratch/lig08
 
+# lab drive (10TB for free, after reaching limit either size or number of file, resort to cold or esolong system)
+# you can initiate disaster recovery by contact IT, snapshot preserve for 45 days
+/gpfs/data/yarmarkovichlab
+
 ```
 
 System is like below:
@@ -49,6 +53,12 @@ REDHAT_SUPPORT_PRODUCT_VERSION="7.9"
 # please refer to http://bigpurple-ws.nyumc.org/wiki/index.php/Getting-Started
 # please refer to the bigpurple slides deck if needed
 sinfo
+squeue -u lig08
+scancel -i jobid
+sacct -X -j jobid
+scontrol show jobid=jobid
+scontrol update JobId=6474 Partition=cpu_short
+man command  # to check full manual
 
 # interactive job
 srun --partition=cpu_short --time=00:10:00 --nodes=1 --ntasks-per-node=8 --mem=5Gb --job-name="test" --pty bash
@@ -66,6 +76,7 @@ scp path_in_local kid@bigpurple.nyumc.org:full_path_to_target
 #SBATCH --mem=100Gb
 #SBATCH --job-name="data_transfer"
 #SBATCH --output=/gpfs/data/yarmarkovichlab/Frank/job_dump/data_transfer.out
+#SBATCH --error=/gpfs/data/yarmarkovichlab/Frank/job_dump/data_transfer.err
 
 sbatch example.sbatch
 ```
@@ -81,11 +92,11 @@ You can also use Ondemand (https://ondemand.hpc.nyumc.org) to check files, jobs,
 
 ## Mount
 
-CCHMC use SMB share so you can directly use Finder, here you have to use SFTP through Filezilla, please use bigpurple.nyumc.org and port 22. When using filezilla, you need to change the default application for opening various file types in `Edit` -> `Settings` -> `File association`, and type something like below:
+CCHMC use SMB share so you can directly use Finder to mount, here you have to use SFTP through Filezilla, please use bigpurple.nyumc.org and port 22. When using filezilla, you need to change the default application for opening various file types in `Edit` -> `Settings` -> `File association`, and type something like below:
 
 ```
 sbatch "/Applications/Visual Studio Code.app" -open
 out "/System/Applications/TextEdit.app" -open
 ```
 
-
+Alternatively, you can use sshfs (https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) to mount to finder.
