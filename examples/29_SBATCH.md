@@ -112,3 +112,5 @@ sudo chmod -R 777 /Volumes/nyu_home
 # unmount
 sudo umount /Volumes/nyu_home
 ```
+
+Bigpurple also has SMB but only for super hot data that needs constant access, which you can apply
