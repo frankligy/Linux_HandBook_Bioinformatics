@@ -33,6 +33,7 @@ custom 4 5
 ```bash
 while read line; do echo $line; done < test.txt
 while read -r var1 var2; do whatever; done < test.txt
+while read line; do echo $line; done < <(awk '{print $NF}' remain_wgs.txt)
 ```
 
 4. using `for` to traverse all matched files
