@@ -39,5 +39,6 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 28. [For and Seq command for iterating numerical variables](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/28_for_and_seq.md)
 29. [slurm job scheduler](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/29_SBATCH.md)
 30. [SSH key](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/30_SSH.md)
-31. stay tuned
+31. [Permission](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/31_permission.md)
+32. stay tuned
 
