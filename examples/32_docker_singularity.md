@@ -26,6 +26,10 @@ docker ps
 docker stop container_id
 docker image rm -f altanalyze
 
+# purge if you encounter space issue when repeatly build the dockerfile
+docker container prune
+docker image prune
+docker volume prune
 ```
 
 
