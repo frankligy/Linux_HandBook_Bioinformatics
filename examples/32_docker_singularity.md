@@ -30,6 +30,11 @@ docker image rm -f altanalyze
 docker container prune
 docker image prune
 docker volume prune
+
+# copy to a container, only modify the container
+docker --rm -it --entrypoint bash altanalyze  # first make sure it is running, now open another shell 
+docker cp /host/to/file.txt container_id_or_name:/docker/to/dir
+docker cp container_id_or_name:/docker/to/file.txt /host/to/dir
 ```
 
 
