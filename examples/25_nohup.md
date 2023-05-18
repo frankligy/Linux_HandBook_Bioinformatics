@@ -5,7 +5,7 @@ that's the usage of `nohup` command. `nohup` command often use with `&` at the e
 the background, so you can do whatever tasks in the foreground.
 
 ```
-nohup bash -c "sleep 20 && echo hi"
+nohup bash -c "sleep 20 && echo hi" &
 # the log file will default to nohup.output
 ```
 
