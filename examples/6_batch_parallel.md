@@ -5,9 +5,15 @@
 2. using `cat` and associated functions like `xargs` and `parallel`
 
 ```bash
-# built-in function, -L (one argument per line), the content passed from cat will be grouped as a {} and sent to the shell command
-cat test.txt | xargs -L 1 -P 10 -I {} sh -c "curl {}"
+# built-in function, -n (how many to pass each time), the content passed from cat will be grouped as a {} and sent to the shell command
+cat test.txt | xargs -n 1 -P 10 -I {} bash -c "curl {}"
+cat test.txt | xargs -n 2 -P 10 -I {} bash -c "curl {}"   # if each row is one sample, n=2 will feed 2 rows to each core
+cat test2.txt | xargs -n 2 -P 10 -I {} bash -c "run {}"   # if each row has two samples, n=2 will feed each row as $1 and $2 to the core
+ 
 # custom function
+function cutsom_function() {
+    echo "hello $1"
+}
 export -f custom_function
 export TMPDIR=/scratch/ligk2e
 cat test.txt | parallel -P 10 custom_function {}
@@ -15,20 +21,8 @@ cat test.txt | parallel -P 10 custom_function {}
 
 Here, it is important to register your custom_function to the global environment, so the subprocess running by `parallel` or `xargs` can access. `P` means the number of cores to employ.
 
-The custom function accept one line! In terms of how to construct own function and pass argument, see the example below:
 
-```bash
-# define, passed arguments will be $1 and $2
-function custom(){
-    result=$1+$2
-    return 0
-}
-# run, passed arguments will be $1 and $2
-custom 4 5
-```
-
-
-3. Using `while read` and associated syntax
+2. Using `while read` and associated syntax
 
 ```bash
 while read line; do echo $line; done < test.txt
@@ -36,7 +30,7 @@ while read -r var1 var2; do whatever; done < test.txt
 while read line; do echo $line; done < <(awk '{print $NF}' remain_wgs.txt)
 ```
 
-4. using `for` to traverse all matched files
+3. using `for` to traverse all matched files
 
 ```bash
 for file in *.fastq.gz; do echo $file; done
@@ -46,7 +40,7 @@ for file in *.fastq.gz; do echo $file; done
 for ((i=0; i<10; i++)); do echo $i; done
 ```
 
-5. Another useful trick is to split string and assign the subset to more than 1 variables.
+4. Another useful trick is to split string and assign the subset to more than 1 variables.
 
 ```bash
 read var1 var2 <<< "name grade"

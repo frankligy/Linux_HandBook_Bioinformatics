@@ -41,5 +41,8 @@ fi
 ```bash
 # whether j is a substring of i
 if [[ "$i" == *"$j"* ]]; then echo 'hi'; fi
+
+# whether two strings are equal
+if [ "$mode" == "bam_to_bed" ]; then echo "good"; fi
 ```
 
