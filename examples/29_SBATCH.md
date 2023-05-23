@@ -65,7 +65,8 @@ man command  # to check full manual
 srun --partition=cpu_short --time=00:10:00 --nodes=1 --ntasks-per-node=8 --mem=5Gb --job-name="test" --pty bash
 
 # rsync or scp
-scp path_in_local kid@bigpurple.nyumc.org:full_path_to_target
+scp path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # file
+scp -r path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # folder
 
 # sbatch command and directive in file
 
@@ -99,6 +100,10 @@ CCHMC use SMB share so you can directly use Finder to mount, here you have to us
 sbatch "/Applications/Visual Studio Code.app" -open
 out "/System/Applications/TextEdit.app" -open
 err "/System/Applications/TextEdit.app" -open
+py "/Applications/Visual Studio Code.app" -open
+sh "/Applications/Visual Studio Code.app" -open
+R "/Applications/Visual Studio Code.app" -open
+md "/Applications/Visual Studio Code.app" -open
 ```
 
 Alternatively, you can use sshfs (https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) to mount to finder. For Mac, particularly we need to download SSHFS and FUSE follow this tutorial (https://github.com/osxfuse/osxfuse/wiki/SSHFS), after that. You can start the mounting:
