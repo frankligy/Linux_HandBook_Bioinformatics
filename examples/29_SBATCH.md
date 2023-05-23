@@ -104,6 +104,7 @@ py "/Applications/Visual Studio Code.app" -open
 sh "/Applications/Visual Studio Code.app" -open
 R "/Applications/Visual Studio Code.app" -open
 md "/Applications/Visual Studio Code.app" -open
+pl "/Applications/Visual Studio Code.app" -open
 ```
 
 Alternatively, you can use sshfs (https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) to mount to finder. For Mac, particularly we need to download SSHFS and FUSE follow this tutorial (https://github.com/osxfuse/osxfuse/wiki/SSHFS), after that. You can start the mounting:
