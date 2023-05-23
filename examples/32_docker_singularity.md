@@ -42,6 +42,16 @@ docker cp container_id_or_name:/docker/to/file.txt /host/to/dir
 ## Singularity
 
 ```bash
+# build and run a read-only version
+singularity build my_software.sif docker://fred2/optitype
+singularity run -B $(pwd):/mnt my_software.sif -i ${sample}.1.fastq ${sample}.2.fastq --rna -v -o /mnt
+
+# build and run a writable version
+singularity build --sandbox altanalyze/ docker://frankligy123/altanalyze:0.5.0.1
+singularity run -B $PWD:/usr/src/app/run --writable altanalyze/ bam
+
 # For singularity interactive 
+singularity shell my_software.sif
 singularity shell --writable ./altanalyze
+
 ```
