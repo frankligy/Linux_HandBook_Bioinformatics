@@ -51,6 +51,12 @@ paste file1.txt file2.txt
 comm -12 file1.txt file2.txt
 ```
 
+### 8. tail and haed
+```bash
+# get rid of first line
+cat file.txt | tail -n +2   
+```
+
 
 
 

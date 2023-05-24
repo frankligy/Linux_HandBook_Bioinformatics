@@ -69,3 +69,11 @@ pyega3 -cf credential_file.json fetch EGAD00001005097 --output-dir ./
 7. download SRA from S3 bucket
 
 Occasionally there will be some issues for the deposited sra file on the website, so using the raw S3 bucket maybe a workaround. Like in this [SRR page](https://trace.ncbi.nlm.nih.gov/Traces/?view=run_browser&acc=SRR13279452&display=data-access), you have both AWS and GCP cloud copy of this file. If it is "Free Egress", then you can directly download. If not, then you need to provide a bucket (charge will incur) using [SRA data delivery service](https://www.ncbi.nlm.nih.gov/Traces/cloud-delivery/), you need to have eRA account and bucket name.
+
+
+8. download from SharePoint, OneDrive, Dropbox
+
+Using FireFox browser, open the web developer tool and go to network tab. Now click the link of download, you can see the file in the dowload 
+section in the download tab in the upper right corner. Now interrupt the download, you should be able to see the failed POST request, now right click the tranfer and obtain the cURL. This is just a curl command, you can add `-o file.zip` then do it programmatically.
+
+In terms of path mapping, you may need to figure out how the filename is encoded in the string, which can potentially be in a few other requests prior to the POST request.
