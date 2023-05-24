@@ -27,7 +27,7 @@ first update the zip file using the utility `fix-onedrive-zip` downloadable from
 perl fix-onedrive-zip file.zip
 ```
 
-Now the updated zip file can be used for `unzip` as usual.
+Now the updated zip file can be used for `unzip` as usual. This fix works for sharepoint as well.
 
 3. `tar.gz file`, archive file
 
