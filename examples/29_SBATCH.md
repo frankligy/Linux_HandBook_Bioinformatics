@@ -77,8 +77,8 @@ scp -r path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # folder
 #SBATCH --time=1-00:00:00
 #SBATCH --mem=100Gb
 #SBATCH --job-name="data_transfer"
-#SBATCH --output=/gpfs/data/yarmarkovichlab/Frank/job_dump/data_transfer.out
-#SBATCH --error=/gpfs/data/yarmarkovichlab/Frank/job_dump/data_transfer.err
+#SBATCH --output=/gpfs/data/yarmarkovichlab/Frank/job_dump/%j_%x.out
+#SBATCH --error=/gpfs/data/yarmarkovichlab/Frank/job_dump/%j_%x.err
 
 sbatch example.sbatch
 ```
@@ -105,6 +105,7 @@ sh "/Applications/Visual Studio Code.app" -open
 R "/Applications/Visual Studio Code.app" -open
 md "/Applications/Visual Studio Code.app" -open
 pl "/Applications/Visual Studio Code.app" -open
+html "/Applications/Google Chrome.app" -open
 ```
 
 Alternatively, you can use sshfs (https://www.digitalocean.com/community/tutorials/how-to-use-sshfs-to-mount-remote-file-systems-over-ssh) to mount to finder. For Mac, particularly we need to download SSHFS and FUSE follow this tutorial (https://github.com/osxfuse/osxfuse/wiki/SSHFS), after that. You can start the mounting:
