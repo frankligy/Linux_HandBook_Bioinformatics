@@ -40,7 +40,16 @@ python3.7 -m pip install sctriangulate
 pip install --upgrade sctriangulate
 pip uninstall sctriangulate
 
+
+# mannual
+pip install werkzeug==2.0.2
+pip install dash==2.0.0 # which requires flask=2.2.5 (updated) which further require werkzeug>=2.2.2, here, manual fix is required, you may first set the flask version to be a lower version to make it compatiable with the werkzeug, sometimes pip install order also matters.
+
+
+
 ```
+
+
 
 # mamba 
 
