@@ -3,7 +3,7 @@
 ```bash
 # create
 conda create -n env python=3.7
-conda create -p ./env python=3.7
+conda create -p ./env python=3.7  
 
 # list all conda env
 conda env list
@@ -35,7 +35,7 @@ conda config -add channels bioconda
 conda install -c bioconda scanpy
 
 # pip install (make sure using the write pip and matched with the python interpretator)
-pip install sctriangulate
+pip install --no-cache-dir sctriangulate  # make sure to unset the PYTHONPATH global variable to make it fully isolated
 python3.7 -m pip install sctriangulate
 pip install --upgrade sctriangulate
 pip uninstall sctriangulate
