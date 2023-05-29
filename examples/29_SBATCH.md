@@ -62,7 +62,7 @@ scontrol update JobId=6474 Partition=cpu_short  # first use show then update
 man command  # to check full manual
 
 # interactive job
-srun --partition=cpu_short --time=00:10:00 --nodes=1 --ntasks-per-node=8 --mem=5Gb --job-name="test" --pty bash
+srun --partition=cpu_short --time=00:10:00 --nodes=1 --ntasks-per-node=8 --mem=5Gb --pty bash
 
 # rsync or scp
 scp path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # file
