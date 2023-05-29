@@ -24,7 +24,7 @@ conda remove -n env --all
 conda deactivate # to exit base, need to deactivate twice
 
 # export
-conda env export environment.yml # make sure no prefix, and the name is just the name, no prefix
+conda env export > environment.yml # make sure no prefix, and the name is just the name, no prefix
 conda env create -f environment.yml -p ./name_env
 
 # check the available channels
@@ -35,7 +35,9 @@ conda config -add channels bioconda
 conda install -c bioconda scanpy
 
 # pip install (make sure using the write pip and matched with the python interpretator)
-pip install --no-cache-dir sctriangulate  # make sure to unset the PYTHONPATH global variable to make it fully isolated
+unset PYTHONPATH    # make sure to not look for shared python folder
+export PYTHONNOUSERSITE="literallyanyletters"   # make sure to not use user
+pip install --no-cache-dir sctriangulate  
 python3.7 -m pip install sctriangulate
 pip install --upgrade sctriangulate
 pip uninstall sctriangulate
