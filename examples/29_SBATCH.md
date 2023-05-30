@@ -56,7 +56,7 @@ sinfo
 squeue -u lig08
 scancel -i jobid
 sacct -X -j jobid
-sacct --format=JobID,MaxRSS --jobs=<job_id>
+seff jobid   # after the job is finished to check the memory usage and other info
 scontrol show jobid=jobid
 scontrol update JobId=6474 Partition=cpu_short  # first use show then update
 man command  # to check full manual
