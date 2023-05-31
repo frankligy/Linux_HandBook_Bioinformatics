@@ -57,6 +57,16 @@ comm -12 file1.txt file2.txt
 cat file.txt | tail -n +2   
 ```
 
+### 9. tr
+
+```bash
+# inspect the new line character
+cat -v sample.txt 
+# remove
+echo $line | tr -d '\n'
+echo $line | tr -d '\r'
+```
+
 
 
 
