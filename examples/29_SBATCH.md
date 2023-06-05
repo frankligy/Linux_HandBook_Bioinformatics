@@ -68,7 +68,7 @@ srun --partition=cpu_short --time=00:10:00 --nodes=1 --ntasks-per-node=8 --mem=5
 scp path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # file
 scp -r path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # folder
 
-# sbatch command and directive in file
+# sbatch command and directive in file, you can use comma for partitions to specify multiple node in case the first one is occupied
 
 #!/bin/bash
 #SBATCH --partition=cpu_medium
@@ -79,6 +79,10 @@ scp -r path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # folder
 #SBATCH --job-name="data_transfer"
 #SBATCH --output=/gpfs/data/yarmarkovichlab/Frank/job_dump/%j_%x.out
 #SBATCH --error=/gpfs/data/yarmarkovichlab/Frank/job_dump/%j_%x.err
+
+# if using gpu, add additional directives
+#SBATCH --gres=gpu:v100:1
+
 
 sbatch example.sbatch
 ```
