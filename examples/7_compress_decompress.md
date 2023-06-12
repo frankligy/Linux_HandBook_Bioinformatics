@@ -18,6 +18,9 @@ zip file.zip file1.txt file2.txt    # zip several txt files
 unzip file.zip  # original archive will not disapper
 unzip -l file.zip  #list the contents of a zip file
 unzip -n file.zip  #skip the content in the zip file that has already been decompressed and exist in current folder
+
+# sometimes unzip can go wrong, error: invalid zip file with overlapped components (possible zip bomb), use 7zip
+7zz x file.zip
 ```
 
 Specifically, `unzip` sometimes will run into error when decompressing files downloaded/compiled by Microsoft, in this case, best way is to 
