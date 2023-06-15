@@ -128,3 +128,5 @@ sudo umount /Volumes/nyu_home
 ```
 
 Bigpurple also has SMB but only for super hot data that needs constant access, which you can apply
+
+After some trial and error, I found Cyberduck is easier to use than filezilla, because the update you made can reflected in real time instead of manually uploading every single time.
