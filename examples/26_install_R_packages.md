@@ -50,7 +50,7 @@ install.packages("clustree")
 # through BiocManager
 install.packages("BiocManager")
 BiocManager::install("SummarizedExperiment")
-# through devtools
+# through devtools, which basically use remotes
 install.packages('devtools')
 devtools::install_github('YingMa0107/CARD')
 # through remotes
@@ -59,6 +59,15 @@ remotes::install_github("lazappi/clustree@develop")
 ```
 
 My suggestion is never compile or update for any prompted messages. After installation, check the `installed.pacakges()` again to verify the package has been installed. Now you can see the installed packages are in `/Users/ligk2e/R_envs/clustree_env/renv/library/R-4.1/x86_64-apple-darwin17.0`. As you can see, it resides in the `cluster_env` folder now.
+
+
+When instructing Rscript to use the renv:
+
+```R
+setwd('path/to/renv_project_dir')
+renv::activate()
+renv::load("/path/to/project")
+```
 
 
 ## Troubleshooting
@@ -77,6 +86,9 @@ Error: package ‘cpp11’ 0.3.1 was found, but >= 0.4.2 is required by ‘tween
 
 Here, we just need to update `rlang` or `cpp11` installed in base environment. Remember, sometimes re-install only 
 modify the one in the renv not in the base (the one in the base may appear as package.1 when viewed as R doesn't allow duplicated index), so you may need to first `remove.packages(package,path/to/base_dir)` then re-install, and re-start the session if necessary.
+
+
+
 
 
 

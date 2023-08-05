@@ -42,6 +42,8 @@ python3.7 -m pip install sctriangulate
 pip install --upgrade sctriangulate
 pip uninstall sctriangulate
 
+# the major problem you will encoutner, is either complier issue, which requires you to update complier, or installation order issue, you have to do some calculations.
+
 
 # mannual
 pip install werkzeug==2.0.2
@@ -59,6 +61,9 @@ As you may notice, conda, when solving environment, can be super slow, sometimes
 recommended to download mamba shell script (https://github.com/conda-forge/miniforge#mambaforge) and run it to install it. When I installed it on my Mac, it by default will be stored at /Users/ligk2e. From here, mamba is a drop-in replacement for conda when manipulating dependencies for the mamba-created environment.
 
 When you need to switch to previously-installed conda environment, you need to use full environment path to activate them, and I prefer to use conda for manupulating previous environment.
+
+
+
 
 
 
