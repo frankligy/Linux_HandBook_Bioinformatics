@@ -56,6 +56,8 @@ renv::load("/path/to/project")
 We can start to install packages in this specific environment now, there are a few ways we usually use:
 
 ```R
+# always add that if needed
+options(install.packages.compile.from.source = "never")
 # direct install, usually packages in CRAN
 install.packages("clustree")
 # through BiocManager
