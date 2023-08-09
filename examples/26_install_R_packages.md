@@ -37,9 +37,20 @@ df <- installed.packages()
 
 Now the recommendation is always open a new `renv` environment to create a new project. I usually create a folder called `R_envs` under my home directory and put my new environment in it for better management. After that, your working directory should be something like below, imagine the env name we created is called `clustree_env`.
 
+The above operation in Rstudio cna also be donw through command line:
+
+```R
+library(renv)
+renv::init(project='./test_project')
+```
+
 ```R
 getwd()
 [1] "/Users/ligk2e/R_envs/clustree_env"
+
+setwd('path/to/renv_project_dir')
+renv::activate()
+renv::load("/path/to/project")
 ```
 
 We can start to install packages in this specific environment now, there are a few ways we usually use:
