@@ -12,7 +12,7 @@ conda env list
 conda list -n env
 conda list -n env sctriangulate
 
-# activate
+# activate, sometimes it doesn't work, you need to keep deactivting until out of base environment
 conda activate env
 source activate env  # do it on cluster
 
