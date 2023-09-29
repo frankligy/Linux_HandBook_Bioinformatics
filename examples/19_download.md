@@ -74,6 +74,6 @@ Occasionally there will be some issues for the deposited sra file on the website
 8. download from SharePoint, OneDrive, Dropbox
 
 Using FireFox browser, open the web developer tool and go to network tab. Now click the link of download, you can see the file in the dowload 
-section in the download tab in the upper right corner. Now interrupt the download, you should be able to see the failed POST request, now right click the tranfer and obtain the cURL. This is just a curl command, you can add `-o file.zip` then do it programmatically.
+section in the download tab in the upper right corner. Now interrupt the download, you should be able to see the failed POST request, now right click the tranfer and obtain the cURL. This is just a curl command, you can add `-o file.zip` then do it programmatically. You may need specific curl version (curl/7.60.0) to recognize `--data-raw` flag.
 
 In terms of path mapping, you may need to figure out how the filename is encoded in the string, which can potentially be in a few other requests prior to the POST request.
