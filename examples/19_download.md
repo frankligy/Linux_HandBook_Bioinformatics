@@ -27,15 +27,15 @@ curl https://raw.githubusercontent.com/frankligy/DeepImmuno/main/reproduce/data/
 ```
 
 
-4. download srr
+4. download srr including dbgap like GTEx
 
 ```bash
 module load sratoolkit/2.10.4
-cut -f 1 srr_list.txt | xargs -L 1 -P 4 -I {} sh -c "fasterq-dump -e 20 -ngc redacted.ngc {}"  # I is for defining replace string, sh -c launch a subprocess, if it is encrypted, need -ngc parameter
+cut -f 1 srr_list.txt | xargs -L 1 -P 4 -I {} sh -c "fasterq-dump -e 20 --ngc redacted.ngc {}"  # I is for defining replace string, sh -c launch a subprocess, if it is encrypted, need -ngc parameter
 for file in *.fastq; do echo $file; done | xargs -L 1 -P 10 -I {} sh -c "gzip {}"   # also, gzip the fastq
 ```
 
-5. download dbGap 
+5. download dbGap from other specialized dbGaP repo
 
 ```bash
 # 1. request access on dbGap
