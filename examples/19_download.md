@@ -13,9 +13,10 @@ wget -r -l1 --no-parent ftp://massive.ucsd.edu/MSV000080527/raw/RAW/B5101/
 2. FTP protocol, single file
 
 ```bash
-wget ftp://ftp.ebi.ac.uk/pride-archive/2017/11/PXD007635/OvCa111_classI_Rep%231.raw
+wget -P /tmp ftp://ftp.ebi.ac.uk/pride-archive/2017/11/PXD007635/OvCa111_classI_Rep%231.raw
 # although it may seem to be http in the browser, we have to change it to ftp
 # make sure there's not special character in the URL, # needs to be escaped by %23
+# -P will specify prefix, default is .
 ```
 
 3. HTTP protocol, single file
