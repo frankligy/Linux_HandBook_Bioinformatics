@@ -80,6 +80,14 @@ In terms of path mapping, you may need to figure out how the filename is encoded
 
 9. download from sftp server
 
+You should first use `sftp`` command to get a sense of the server structure, imagine the username is my email, so I can do the following, I just need to get the folder and file name for programmatical download.
+
 ```bash
-sshpass -p 'password' sftp 'username@server_domain:/folder/*' ./RNAseq
+sftp email@server_host_domain
+```
+
+Then you can follow the following, importantly, there's a ":" after server_host_domain, also every important to figure out the special character and need to be escaped and URL encoded special character, just try a few times to get the right string.
+
+```bash
+sshpass -p 'password' sftp 'email@server_host_domain:/folder/*' ./RNAseq
 ```
