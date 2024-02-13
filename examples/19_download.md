@@ -19,12 +19,17 @@ wget -P /tmp ftp://ftp.ebi.ac.uk/pride-archive/2017/11/PXD007635/OvCa111_classI_
 # -P will specify prefix, default is .
 ```
 
-3. HTTP protocol, single file
+3. HTTP protocol, single file or folder
 
 ```bash
 curl -o after_pca.txt https://raw.githubusercontent.com/frankligy/DeepImmuno/main/reproduce/data/after_pca.txt
 # OR
 curl https://raw.githubusercontent.com/frankligy/DeepImmuno/main/reproduce/data/after_pca.txt > after_pca.txt
+```
+
+```bash
+wget --no-parent -r --no-check-certificate https://path/to/foler/
+find ./downloaded_whole_folder/ -type f -name "index*" -exec rm {} \;   # get rid of index file generated while downloading
 ```
 
 
