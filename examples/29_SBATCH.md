@@ -74,6 +74,7 @@ scp -r path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # folder
 #SBATCH --partition=cpu_medium
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-node=4
 #SBATCH --time=1-00:00:00
 #SBATCH --mem=100Gb
 #SBATCH --job-name="data_transfer"
