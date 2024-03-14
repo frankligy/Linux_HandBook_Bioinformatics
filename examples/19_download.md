@@ -97,3 +97,22 @@ Then you can follow the following, importantly, there's a ":" after server_host_
 ```bash
 sshpass -p 'password' sftp "email@server_host_domain:/folder/*" ./RNAseq
 ```
+
+10. Globus
+
+```
+1. I need to create a globus ID using my ORCID, my UC email and also link my NYU email
+2. I receive the collection endpoint from collaborator, you can find collection endpoint by clincking get link
+3. I set up globus CLI to batch transfer, pip install, conda 3.7
+4. I download linux globus personal connect to set up bigpurple endpoint following the README, get the endpoint, and then connect using ./globusconnectperonal -start &, check using 
+./globusconnectpersonal -status, make sure it is connected
+5. transfer (globus transfer "endpoint:/epn" "my_endpoint:~" --recursive --label "CLI single folder") see this tutorial https://docs.globus.org/cli/examples/#batch_transfers 
+6. check task status either online or ./globusconnectpersonal task show taskID
+```
+
+11. synapse
+
+```
+Using the python API: https://help.synapse.org/docs/Downloading-Data-Programmatically-From-a-Portal.1982693983.html 
+```
+
