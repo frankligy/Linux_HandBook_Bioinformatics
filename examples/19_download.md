@@ -110,7 +110,7 @@ sshpass -p 'password' sftp "email@server_host_domain:/folder/*" ./RNAseq
 
 COLLECTION_SOURCE="redacted"
 COLLECTION_DES="redacted"  # already did globusconnectpersonal -setup
-DES_DIR="/gpfs/home/lig08"   # must be home directory
+DES_DIR="/gpfs/home/lig08"   # must be home directory, change if needed https://docs.globus.org/globus-connect-personal/install/linux/#config-paths
 FINAL_DIR="/gpfs/data/yarmarkovichlab/folder"
 
 module load anaconda3
