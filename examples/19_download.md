@@ -100,14 +100,45 @@ sshpass -p 'password' sftp "email@server_host_domain:/folder/*" ./RNAseq
 
 10. Globus
 
-```
-1. I need to create a globus ID using my ORCID, my UC email and also link my NYU email
-2. I receive the collection endpoint from collaborator, you can find collection endpoint by clincking get link
-3. I set up globus CLI to batch transfer, pip install, conda 3.7
-4. I download linux globus personal connect to set up bigpurple endpoint following the README, get the endpoint, and then connect using ./globusconnectperonal -start &, check using 
-./globusconnectpersonal -status, make sure it is connected
-5. transfer (globus transfer "endpoint:/epn" "my_endpoint:~" --recursive --label "CLI single folder") see this tutorial https://docs.globus.org/cli/examples/#batch_transfers 
-6. check task status either online or ./globusconnectpersonal task show taskID
+```bash
+# create a globus ID using my ORCID, my UC email and also link my NYU email
+# I receive the collection endpoint from collaborator, you can find collection endpoint by clincking get link
+# I set up globus CLI to batch transfer, pip install, conda 3.7
+# I download linux globus personal connect to set up bigpurple endpoint following the README (globalconnect), get the endpoint by globalconnectpersonal -setup
+# -start & and use -status to check the conenction
+# check task status suing task taskID or online
+
+COLLECTION_SOURCE="redacted"
+COLLECTION_DES="redacted"  # already did globusconnectpersonal -setup
+DES_DIR="/gpfs/home/lig08"   # must be home directory
+FINAL_DIR="/gpfs/data/yarmarkovichlab/folder"
+
+module load anaconda3
+conda activate /path/to/globus_env
+unset PYTHONPATH
+
+/gpfs/data/yarmarkovichlab/path/globusconnectpersonal-3.2.3/globusconnectpersonal -start &   # can not work if in a script must be in interactive shell
+echo $(/gpfs/data/yarmarkovichlab/path/globusconnectpersonal-3.2.3/globusconnectpersonal -status)
+echo $(globus ls "${COLLECTION_SOURCE}")
+echo $(globus ls "${COLLECTION_DES}:${DES_DIR}")
+
+function download_single_file () {
+    globus transfer "${COLLECTION_SOURCE}:/${1}" "${COLLECTION_DES}:${DES_DIR}/${1}" --label "CLI single file"
+}
+
+function download_folder () {
+    globus transfer "endpoint:/epn" "my_endpoint:~" --recursive --label "CLI single folder"
+}
+
+BATCH_FILE="/gpfs/data/yarmarkovichlab/path/xag_now.txt"  # my home directory has 100GB limit
+
+function download_batch () {
+    globus transfer "${COLLECTION_SOURCE}:/" "${COLLECTION_DES}:${DES_DIR}/" --label "CLI batch" --batch ${BATCH_FILE}
+}
+
+function move_batch () {
+    mv ${DES_DIR}/*.fastq.gz ${FINAL_DIR}
+}
 ```
 
 11. synapse
