@@ -74,7 +74,7 @@ scp -r path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # folder
 #SBATCH --partition=cpu_medium
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
-#SBATCH --cpus-per-node=4
+#SBATCH --cpus-per-task=4
 #SBATCH --time=1-00:00:00
 #SBATCH --mem=100Gb
 #SBATCH --job-name="data_transfer"
@@ -131,3 +131,24 @@ sudo umount /Volumes/nyu_home
 Bigpurple also has SMB but only for super hot data that needs constant access, which you can apply
 
 After some trial and error, I found Cyberduck is easier to use than filezilla, because the update you made can reflected in real time instead of manually uploading every single time.
+
+
+# jobarray
+
+```bash
+#!/bin/bash
+#SBATCH --partition=cpu_medium
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=3
+#SBATCH --time=1-00:00:00
+#SBATCH --mem=150Gb
+#SBATCH --job-name="NeoVerse"
+#SBATCH --output=/gpfs/data/yarmarkovichlab/Frank/job_dump/%j_%x.out
+#SBATCH --error=/gpfs/data/yarmarkovichlab/Frank/job_dump/%j_%x.err
+#SBATCH --array=1-13
+
+CONFIG="../all_samples.txt"
+INPUT=$(awk -v ArrayTaskID=${SLURM_ARRAY_TASK_ID} 'NR==ArrayTaskID {print $1}' ${CONFIG})
+main ${INPUT}
+```
