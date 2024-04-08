@@ -35,7 +35,15 @@ docker volume prune
 docker --rm -it --entrypoint bash altanalyze  # first make sure it is running, now open another shell 
 docker cp /host/to/file.txt container_id_or_name:/docker/to/dir
 docker cp container_id_or_name:/docker/to/file.txt /host/to/dir
+
+
+# since Mac M series chip use ARM as archtecture, which is not compatible with linux/amd64, we need other ways to build
+docker buildx create --name mybuilder --use  # this will create a local image
+docker buildx inspect --bootstrap  # this will create a container
+docker buildx build --platform linux/amd64 --no-cache -t frankligy123/altanalyze:0.0.1 --push .  
 ```
+
+
 
 
 
