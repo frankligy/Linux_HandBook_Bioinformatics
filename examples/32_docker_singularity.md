@@ -62,4 +62,7 @@ singularity run -B $PWD:/usr/src/app/run --writable altanalyze/ bam
 singularity shell my_software.sif
 singularity shell --writable ./altanalyze
 
+# when pulling private docker image
+export SINGULARITY_DOCKER_USERNAME=frankligy123
+export SINGULARITY_DOCKER_PASSWORD=redacted
 ```
