@@ -40,11 +40,12 @@ docker cp container_id_or_name:/docker/to/file.txt /host/to/dir
 # since Mac M series chip use ARM as archtecture, which is not compatible with linux/amd64, we need other ways to build
 docker buildx create --name mybuilder --use  # this will create a local image
 docker buildx inspect --bootstrap  # this will create a container
-docker buildx build --platform linux/amd64 --no-cache -t frankligy123/altanalyze:0.0.1 --push .  
+docker buildx build --platform linux/amd64 --no-cache -t altanalyze:0.0.1 --load .   # create an image locally, then tag and push as normal
+docker buildx build --platform linux/amd64 --no-cache -t frankligy123/altanalyze:0.0.1 --push .    # shortcut for dockerhub
 
-# you can also push to other registry, following their tutorial for how to login (may need parituclar token)
+# you can also push to other registry, following their tutorial for how to login (may need parituclar token),
+# cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1
 docker login cgc-images.sbgenomics.com
-docker buildx build --platform linux/amd64 --no-cache -t cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1 --push .
 ```
 
 
