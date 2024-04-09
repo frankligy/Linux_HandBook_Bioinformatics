@@ -41,6 +41,10 @@ docker cp container_id_or_name:/docker/to/file.txt /host/to/dir
 docker buildx create --name mybuilder --use  # this will create a local image
 docker buildx inspect --bootstrap  # this will create a container
 docker buildx build --platform linux/amd64 --no-cache -t frankligy123/altanalyze:0.0.1 --push .  
+
+# you can also push to other registry, following their tutorial for how to login (may need parituclar token)
+docker login cgc-images.sbgenomics.com
+docker buildx build --platform linux/amd64 --no-cache -t cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1 --push .
 ```
 
 
