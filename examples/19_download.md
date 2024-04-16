@@ -147,3 +147,10 @@ function move_batch () {
 Using the python API: https://help.synapse.org/docs/Downloading-Data-Programmatically-From-a-Portal.1982693983.html 
 ```
 
+12. aria2c
+
+```bash
+conda install bioconda:aria2c
+aria2c -i download.link.txt -j 10
+```
+
