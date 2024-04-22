@@ -154,3 +154,15 @@ conda install bioconda:aria2c
 aria2c -i download.link.txt -j 10
 ```
 
+13. download TCGA from GDC
+
+* go to GDC portal, use cohort builder and then go to repository to select needed bam file, add to cart
+* go to cart, download manifest
+* if controlled, click username to download token file
+* download gdc-client ubuntu linux version
+* now you can download
+
+```bash
+${TOOL} download -m ${MANIFEST} -t ${TOKEN} -d ${OUTDIR} --no-annotations --no-related-files 
+```
+
