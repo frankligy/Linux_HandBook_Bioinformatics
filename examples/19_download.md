@@ -152,6 +152,7 @@ Using the python API: https://help.synapse.org/docs/Downloading-Data-Programmati
 ```bash
 conda install bioconda:aria2c
 aria2c -i download.link.txt -j 10
+# you may need to add --check-certificate=false
 ```
 
 13. download TCGA from GDC
