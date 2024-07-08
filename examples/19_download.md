@@ -143,8 +143,13 @@ function move_batch () {
 
 11. synapse
 
-```
-Using the python API: https://help.synapse.org/docs/Downloading-Data-Programmatically-From-a-Portal.1982693983.html 
+Using the [python API](https://github.com/Sage-Bionetworks/synapsePythonClient?tab=readme-ov-file):
+
+```bash
+conda create synapse_env python=3.9
+pip install --upgrade "synapseclient[pandas, pysftp, boto3]"
+
+synapse -p auth_token(get_from_website_account_one_off) add file.txt --parentId folder_syp_id
 ```
 
 12. aria2c
