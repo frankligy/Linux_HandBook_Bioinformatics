@@ -172,3 +172,14 @@ aria2c -i download.link.txt -j 10
 ${TOOL} download -m ${MANIFEST} -t ${TOKEN} -d ${OUTDIR} --no-annotations --no-related-files 
 ```
 
+14. sevenbridge CMD
+
+* follow https://docs.cancergenomicscloud.org/docs/command-line-interface
+
+```
+module load sevenbridges/1.0
+sb configure # the api point is https://cgc-api.sbgenomics.com/v2 # token can be downloaded
+cut -f 1 manifest_intron_peptide.tsv | xargs -n 1 -P 10 -I {} bash -c "sb download --file {} --destination /gpfs/data/yarmarkovichlab/Frank/pan_cancer/intron_retention/GBM"  
+sb file --project li2g2uc/redact-redact
+```
+
