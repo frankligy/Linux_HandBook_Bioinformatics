@@ -179,7 +179,7 @@ ${TOOL} download -m ${MANIFEST} -t ${TOKEN} -d ${OUTDIR} --no-annotations --no-r
 ```
 module load sevenbridges/1.0
 sb configure # the api point is https://cgc-api.sbgenomics.com/v2 # token can be downloaded
-cut -f 1 manifest_intron_peptide.tsv | xargs -n 1 -P 10 -I {} bash -c "sb download --file {} --destination /gpfs/data/yarmarkovichlab/Frank/pan_cancer/intron_retention/GBM"  
+cut -f 1 manifest.tsv | xargs -n 1 -P 10 -I {} bash -c "sb download --file {} --destination /path/folder"  
 sb file --project li2g2uc/redact-redact
 ```
 
