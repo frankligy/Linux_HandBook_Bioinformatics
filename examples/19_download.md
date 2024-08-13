@@ -37,6 +37,7 @@ find ./downloaded_whole_folder/ -type f -name "index*" -exec rm {} \;   # get ri
 
 ```bash
 module load sratoolkit/2.10.4 # might need to configure, follow this https://github.com/ncbi/sra-tools/wiki/03.-Quick-Toolkit-Configuration
+# I found 2.10.7 has issue, 3.1.0 solves the problem
 cut -f 1 srr_list.txt | xargs -L 1 -P 4 -I {} sh -c "fasterq-dump -e 20 --ngc redacted.ngc {}"  # I is for defining replace string, sh -c launch a subprocess, if it is encrypted, need -ngc parameter
 for file in *.fastq; do echo $file; done | xargs -L 1 -P 10 -I {} sh -c "gzip {}"   # also, gzip the fastq
 ```
