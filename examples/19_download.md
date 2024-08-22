@@ -179,7 +179,7 @@ ${TOOL} download -m ${MANIFEST} -t ${TOKEN} -d ${OUTDIR} --no-annotations --no-r
 
 ```
 module load sevenbridges/1.0
-sb configure # the api point is https://cgc-api.sbgenomics.com/v2 # token can be downloaded
+sb configure # the api point is https://cgc-api.sbgenomics.com/v2 # token can be downloaded # for cavetica there's another api
 cut -f 1 manifest.tsv | xargs -n 1 -P 10 -I {} bash -c "sb download --file {} --destination /path/folder"  
 sb file --project li2g2uc/redact-redact
 ```
