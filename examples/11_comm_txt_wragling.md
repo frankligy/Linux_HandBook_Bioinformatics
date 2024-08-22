@@ -67,6 +67,20 @@ echo $line | tr -d '\n'
 echo $line | tr -d '\r'
 ```
 
+### 10. grep acts like comm and filter
+
+```bash
+grep -Fxvf done.txt all.txt > absent.txt
+grep -Ff absent.txt complete_df.txt > filter_df.txt
+grep -Fvf done.txt complete_df.txt > filter_df.txt
+
+
+# F is fixed string, no regex
+# x is match whole line
+# v is inverted match
+# f is supply a file
+```
+
 
 
 
