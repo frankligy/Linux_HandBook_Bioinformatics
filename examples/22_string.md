@@ -29,3 +29,10 @@ y=${x}_pattern
 x+='_pattern'
 ```
 
+
+### easy replace
+
+```bash
+for f in *.gz; do echo ${f/_001/_002/}; done
+```
+
