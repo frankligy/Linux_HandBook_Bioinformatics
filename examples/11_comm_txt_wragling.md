@@ -81,7 +81,14 @@ grep -Fvf done.txt complete_df.txt > filter_df.txt
 # f is supply a file
 ```
 
+### 11. grep to extract things
 
+```bash
+grep -oP "'\./.*?\.txt'" your_file.txt
+
+# o only output matched part
+# P perl regex
+```
 
 
 
