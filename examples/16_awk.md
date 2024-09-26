@@ -6,6 +6,10 @@
 
 ```bash
 awk -F "\t" '$3 ~ /ERV/' input.txt
+
+awk '$5 !~ /^ENSG/' input_file.txt
+
+awk '$5 != "None"' input_file.txt
 ```
 
 ```bash
