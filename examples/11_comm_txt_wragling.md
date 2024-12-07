@@ -90,6 +90,14 @@ grep -oP "'\./.*?\.txt'" your_file.txt
 # P perl regex
 ```
 
+### 12. look behind
+
+```bash
+grep -oP "(?>=href=\")http://.*?raw" test.txt
+
+# (?>=whatever) means things need to be preceded by whatever
+```
+
 
 
 
