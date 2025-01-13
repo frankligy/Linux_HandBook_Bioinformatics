@@ -46,3 +46,15 @@ if [[ "$i" == *"$j"* ]]; then echo 'hi'; fi
 if [ "$mode" == "bam_to_bed" ]; then echo "good"; fi
 ```
 
+4. algorithmic operation
+
+```bash
+for i in "${!index_array[@]}"; do
+    if (( i % 2 == 0 )); then
+        even_positions+=(${index_array[i]})  
+    else
+        odd_positions+=(${index_array[i]}) 
+    fi
+done
+```
+
