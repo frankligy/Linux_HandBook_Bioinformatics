@@ -19,6 +19,8 @@ docker run -v $PWD:/mnt -t frankligy123/altanalyze:0.5.0 bam    # don't mount yo
 
 # To run (interactive)
 docker run --rm -it --entrypoint bash frankligy123/altanalyze 
+docker run --rm -it frankligy123/altanalyze bash
+exit
 
 # To check
 docker images
@@ -30,11 +32,12 @@ docker image rm -f altanalyze
 docker container prune
 docker image prune
 docker volume prune
+docker system df
 
 # copy to a container, only modify the container
 docker --rm -it --entrypoint bash altanalyze  # first make sure it is running, now open another shell 
 docker cp /host/to/file.txt container_id_or_name:/docker/to/dir
-docker cp container_id_or_name:/docker/to/file.txt /host/to/dir
+docker cp container_id_or_name:/docker/to/file.txt /host/to/dir  # but when you do COPY in dockerfile, you need to specifiy des dir name not just parental dir
 
 
 # since Mac M series chip use ARM as archtecture, which is not compatible with linux/amd64, we need other ways to build
