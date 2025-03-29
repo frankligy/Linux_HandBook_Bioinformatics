@@ -36,6 +36,7 @@ docker container prune
 docker image prune
 docker volume prune
 docker system df
+docker builder prune
 
 # copy to a container, only modify the container
 docker --rm -it --entrypoint bash altanalyze  # first make sure it is running, now open another shell 
