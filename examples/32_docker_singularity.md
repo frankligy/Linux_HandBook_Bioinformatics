@@ -22,6 +22,9 @@ docker run --rm -it --entrypoint bash frankligy123/altanalyze
 docker run --rm -it frankligy123/altanalyze bash
 exit
 
+# to run a web app
+docker run -p 3838:3838 web_pipeline:0.0.4 # make sure host in your web should be 0.0.0.0
+
 # To check
 docker images
 docker ps
