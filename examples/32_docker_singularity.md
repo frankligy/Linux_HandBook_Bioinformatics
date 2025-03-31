@@ -54,7 +54,7 @@ docker buildx build --platform linux/amd64 --no-cache -t frankligy123/altanalyze
 # you can also push to other registry, following their tutorial for how to login (may need parituclar token),
 # cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1
 docker login cgc-images.sbgenomics.com # using username and the token, not password
-docker tag altanalyze:0.0.1 cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1
+docker tag altanalyze:0.0.1 cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1  # or you can directly load with the registry name
 docker push cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1
 ```
 
