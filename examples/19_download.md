@@ -23,13 +23,11 @@ wget -P /tmp ftp://ftp.ebi.ac.uk/pride-archive/2017/11/PXD007635/OvCa111_classI_
 
 ```bash
 curl -o after_pca.txt https://raw.githubusercontent.com/frankligy/DeepImmuno/main/reproduce/data/after_pca.txt
-# OR
-curl https://raw.githubusercontent.com/frankligy/DeepImmuno/main/reproduce/data/after_pca.txt > after_pca.txt
+curl -k -o samples.csv https://genome.med.nyu.edu/public/yarmarkovichlab/lab_transfer_port/samples.csv # --no-check-certificate
 ```
 
 ```bash
-wget --no-parent -r --no-check-certificate https://path/to/foler/
-find ./downloaded_whole_folder/ -type f -name "index*" -exec rm {} \;   # get rid of index file generated while downloading
+wget -r -nH --cut-dirs=2 --no-parent --no-check-certificate --reject "index.html*" https://genome.med.nyu.edu/public/yarmarkovichlab/lab_transfer_port/
 ```
 
 
