@@ -101,43 +101,28 @@ sshpass -p 'password' sftp "email@server_host_domain:/folder/*" ./RNAseq
 
 ```bash
 # create a globus ID using my ORCID, my UC email and also link my NYU email
-# I receive the collection endpoint from collaborator, you can find collection endpoint by clincking get link
-# I set up globus CLI to batch transfer, pip install, conda 3.7
-# I download linux globus personal connect to set up bigpurple endpoint following the README (globalconnect), get the endpoint by globalconnectpersonal -setup
-# -start & and use -status to check the conenction
-# check task status suing task taskID or online
+# I set up globus CLI to batch transfer, pip install, conda 3.7 (https://docs.globus.org/cli/)
+# also need to use global personal connect to set up a endpoint to receive, download linux (https://docs.globus.org/globus-connect-personal), and setup
 
-COLLECTION_SOURCE="redacted"
-COLLECTION_DES="redacted"  # already did globusconnectpersonal -setup
-DES_DIR="/gpfs/home/lig08"   # must be home directory, change if needed https://docs.globus.org/globus-connect-personal/install/linux/#config-paths
-FINAL_DIR="/gpfs/data/yarmarkovichlab/folder"
+./globusconnectpersonal -setup
+./globusconnectpersonal -start &
+./globusconnectpersonal -status
 
-module load anaconda3
-conda activate /path/to/globus_env
-unset PYTHONPATH
+# the endpoint will show up once you setup, you can also use
 
-/gpfs/data/yarmarkovichlab/path/globusconnectpersonal-3.2.3/globusconnectpersonal -start &   # can not work if in a script must be in interactive shell
-echo $(/gpfs/data/yarmarkovichlab/path/globusconnectpersonal-3.2.3/globusconnectpersonal -status)
-echo $(globus ls "${COLLECTION_SOURCE}")
-echo $(globus ls "${COLLECTION_DES}:${DES_DIR}")
+globus endpoint search --filter-scope my-endpoints # to your endpoint
 
-function download_single_file () {
-    globus transfer "${COLLECTION_SOURCE}:/${1}" "${COLLECTION_DES}:${DES_DIR}/${1}" --label "CLI single file"
-}
+# login to globus server, get link and only look for collectoin endpoint like this redacted-ccc3-4e22-9ff6-redacted, the collection destinatin is the folder, you can do
 
-function download_folder () {
-    globus transfer "endpoint:/epn" "my_endpoint:~" --recursive --label "CLI single folder"
-}
+globus ls collection_endpoint # to get all folders
+globus ls collection_endpoint:/folder1  # to get all subfolders or files
 
-BATCH_FILE="/gpfs/data/yarmarkovichlab/path/xag_now.txt"  # my home directory has 100GB limit
+# now transfer
 
-function download_batch () {
-    globus transfer "${COLLECTION_SOURCE}:/" "${COLLECTION_DES}:${DES_DIR}/" --label "CLI batch" --batch ${BATCH_FILE}
-}
+globus transfer "endpoint:/folder" "my_endpoint:~" --recursive --label "CLI single folder"
+globus transfer "endpoint:/file" "my_endpoint:~/file" --label "CLI single file"
+globus transfer "endpoint:/" "my_endpoint:~/" --label "CLI batch" --batch ${BATCH_FILE}
 
-function move_batch () {
-    mv ${DES_DIR}/*.fastq.gz ${FINAL_DIR}
-}
 ```
 
 11. synapse
