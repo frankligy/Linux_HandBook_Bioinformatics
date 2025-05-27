@@ -114,7 +114,7 @@ globus endpoint search --filter-scope my-endpoints
 globus endpoint delete endpoint_id
 
 ./globusconnectpersonal -setup
-./globusconnectpersonal -start &   
+./globusconnectpersonal -start &   # logout every 5mins
 ./globusconnectpersonal -status
 
 globus ls collection_endpoint # to get all folders
