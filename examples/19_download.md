@@ -102,26 +102,31 @@ sshpass -p 'password' sftp "email@server_host_domain:/folder/*" ./RNAseq
 ```bash
 # create a globus ID using my ORCID, my UC email and also link my NYU email
 # I set up globus CLI to batch transfer, pip install, conda 3.7 (https://docs.globus.org/cli/)
-# also need to use global personal connect to set up a endpoint to receive, download linux (https://docs.globus.org/globus-connect-personal), and setup
+# also need to use global personal connect to set up a endpoint to receive, download linux (https://docs.globus.org/globus-connect-personal)
+# login to globus server, get link and only look for collectoin endpoint like this redacted-ccc3-4e22-9ff6-redacted, the collection destinatin is the folder
+
+# normal procedure
+module load anaconda3
+conda activate ../globus_env
+unset PYTHONPATH
+
+globus endpoint search --filter-scope my-endpoints 
+globus endpoint delete endpoint_id
 
 ./globusconnectpersonal -setup
-./globusconnectpersonal -start &
+./globusconnectpersonal -start &   
 ./globusconnectpersonal -status
-
-# the endpoint will show up once you setup, you can also use
-
-globus endpoint search --filter-scope my-endpoints # to your endpoint
-
-# login to globus server, get link and only look for collectoin endpoint like this redacted-ccc3-4e22-9ff6-redacted, the collection destinatin is the folder, you can do
 
 globus ls collection_endpoint # to get all folders
 globus ls collection_endpoint:/folder1  # to get all subfolders or files
 
 # now transfer
+globus transfer "endpoint:/folder" "my_endpoint:~" --recursive --label "whatever"
+globus transfer "endpoint:/file" "my_endpoint:~/file" --label "whatever"
+globus transfer "endpoint:/" "my_endpoint:~/" --label "whatever" --batch ${BATCH_FILE}
 
-globus transfer "endpoint:/folder" "my_endpoint:~" --recursive --label "CLI single folder"
-globus transfer "endpoint:/file" "my_endpoint:~/file" --label "CLI single file"
-globus transfer "endpoint:/" "my_endpoint:~/" --label "CLI batch" --batch ${BATCH_FILE}
+# check on web or using
+globus task list
 
 ```
 
