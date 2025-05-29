@@ -104,6 +104,7 @@ sshpass -p 'password' sftp "email@server_host_domain:/folder/*" ./RNAseq
 # I set up globus CLI to batch transfer, pip install, conda 3.7 (https://docs.globus.org/cli/)
 # also need to use global personal connect to set up a endpoint to receive, download linux (https://docs.globus.org/globus-connect-personal)
 # login to globus server, get link and only look for collectoin endpoint like this redacted-ccc3-4e22-9ff6-redacted, the collection destinatin is the folder
+# May need to use specialized node, in NYU, we need to use data_mover partition
 
 # normal procedure
 module load anaconda3
