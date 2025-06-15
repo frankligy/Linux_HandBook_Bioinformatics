@@ -49,9 +49,10 @@ docker cp container_id_or_name:/docker/to/file.txt /host/to/dir  # but when you 
 docker buildx create --name mybuilder --use  # this will create a local image
 docker buildx inspect --bootstrap  # this will create a container
 docker buildx build --platform linux/amd64 --no-cache -t altanalyze:0.0.1 --load .   # create an image locally, then tag and push as normal
-docker buildx build --platform linux/amd64 --no-cache -t frankligy123/altanalyze:0.0.1 --push .    # shortcut for dockerhub or other hub, skip tag, you might need login first, see below
+docker buildx build --platform linux/amd64 --no-cache -t cgc-images.sbgenomics.com/li2g2uc/rescore_pipeline:0.3.1 --load . # skip tag, might need login first
+docker buildx build --platform linux/amd64 --no-cache -t frankligy123/altanalyze:0.0.1 --push .    # shortcut for dockerhub or other hub
 
-# you can also push to other registry, following their tutorial for how to login (may need parituclar token)
+# full step for other hubs
 docker login cgc-images.sbgenomics.com # using username and the token, not password
 docker tag altanalyze:0.0.1 cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1  # or you can directly load with the registry name
 docker push cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1
