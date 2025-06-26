@@ -182,6 +182,7 @@ aws configure  # your collaborator should provide you with accessKeyID and secre
 export AWS_ACCESS_KEY_ID=whatever
 export AWS_SECRET_ACCESS_KEY=whatever
 aws s3 ls s3:/path/to/their_folder
+aws s3 ls s3:/path/to/their_folder --recursive
 aws s3 cp s3:/path/to/their_folder ./ --recursive
 ```
 
