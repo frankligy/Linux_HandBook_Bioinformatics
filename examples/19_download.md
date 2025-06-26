@@ -178,6 +178,9 @@ sb file --project li2g2uc/redact-redact
 ```bash
 Make sure you have aws-cli installed
 aws configure  # your collaborator should provide you with accessKeyID and secretAccessKey
+# alternatively for interactively setting up, you can use export
+export AWS_ACCESS_KEY_ID=whatever
+export AWS_SECRET_ACCESS_KEY=whatever
 aws s3 ls s3:/path/to/their_folder
 aws s3 cp s3:/path/to/their_folder ./ --recursive
 ```
