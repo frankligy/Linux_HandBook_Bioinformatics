@@ -65,8 +65,8 @@ man command  # to check full manual
 srun --partition=cpu_short --time=00:10:00 --nodes=1 --ntasks-per-node=8 --mem=5Gb --pty bash
 
 # rsync or scp
-scp path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # file
-scp -r path_in_local kid@bigpurple.nyumc.org:full_path_to_target  # folder
+scp kid@bigpurple.nyumc.org:full_path_to_target path_in_local   # file
+scp -r kid@bigpurple.nyumc.org:full_path_to_target path_in_local   # folder
 
 # sbatch command and directive in file, you can use comma for partitions to specify multiple node in case the first one is occupied
 
