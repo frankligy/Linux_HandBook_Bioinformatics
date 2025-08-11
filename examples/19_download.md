@@ -129,6 +129,11 @@ globus transfer "endpoint:/" "my_endpoint:~/" --label "whatever" --batch ${BATCH
 # check on web or using
 globus task list
 
+
+# using my own laptop (download gcp and setup as a collection point), and then you should have a shared folder as second collection point, then do it
+# you may need this to get rid of previous setup 
+mv ~/.globusonline ~/.globusonline_backup
+
 ```
 
 11. synapse
