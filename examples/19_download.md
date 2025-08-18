@@ -100,28 +100,32 @@ sshpass -p 'password' sftp "email@server_host_domain:/folder/*" ./RNAseq
 10. Globus
 
 ```bash
-# create a globus ID using my ORCID, my UC email and also link my NYU email
+# created a globus ID using my ORCID, my UC email and also link my NYU email
+# basically two endpoints, set up my endpoint, grab server endpoint
+# my endpoint:
 # I set up globus CLI to batch transfer, pip install, conda 3.7 (https://docs.globus.org/cli/)
 # also need to use global personal connect to set up a endpoint to receive, download linux (https://docs.globus.org/globus-connect-personal)
-# login to globus server, get link and only look for collectoin endpoint like this redacted-ccc3-4e22-9ff6-redacted, the collection destinatin is the folder
 # May need to use specialized node, in NYU, we need to use data_mover partition
+# server endpoint:
+# login to globus server, get link and only look for remote collectoin endpoint like this redacted-ccc3-4e22-9ff6-redacted, the collection destination is the folder
+
 
 # normal procedure
 module load anaconda3
-conda activate ../globus_env
+conda activate /gpfs/data/yarmarkovichlab/U1_MB/globus_env
 unset PYTHONPATH
 
 globus endpoint search --filter-scope my-endpoints 
 globus endpoint delete endpoint_id
 
-./globusconnectpersonal -setup
-./globusconnectpersonal -start &   # logout every 5mins
-./globusconnectpersonal -status
+/gpfs/data/yarmarkovichlab/U1_MB/globusconnectpersonal-3.2.3/globusconnectpersonal -setup
+/gpfs/data/yarmarkovichlab/U1_MB/globusconnectpersonal-3.2.3/globusconnectpersonal -start &  
+/gpfs/data/yarmarkovichlab/U1_MB/globusconnectpersonal-3.2.3/globusconnectpersonal -status
 
 globus ls collection_endpoint # to get all folders
 globus ls collection_endpoint:/folder1  # to get all subfolders or files
 
-# now transfer
+# now transfer two ways, for my endpoint, must be ~
 globus transfer "endpoint:/folder" "my_endpoint:~" --recursive --label "whatever"
 globus transfer "endpoint:/file" "my_endpoint:~/file" --label "whatever"
 globus transfer "endpoint:/" "my_endpoint:~/" --label "whatever" --batch ${BATCH_FILE}
@@ -129,9 +133,9 @@ globus transfer "endpoint:/" "my_endpoint:~/" --label "whatever" --batch ${BATCH
 # check on web or using
 globus task list
 
-
-# using my own laptop (download gcp and setup as a collection point), and then you should have a shared folder as second collection point, then do it
+# using my own laptop (download gcp and setup as a collection point)
 # you may need this to get rid of previous setup 
+# but barely work due to ca certificate
 mv ~/.globusonline ~/.globusonline_backup
 
 ```
