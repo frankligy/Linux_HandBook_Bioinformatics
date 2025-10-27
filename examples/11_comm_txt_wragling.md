@@ -93,7 +93,7 @@ grep -oP "'\./.*?\.txt'" your_file.txt
 ### 12. look behind
 
 ```bash
-grep -oP "(?>=href=\")http://.*?raw" test.txt
+grep -oP "(?<=href=\")http://.*?raw" test.txt
 
 # (?>=whatever) means things need to be preceded by whatever
 ```
