@@ -18,3 +18,9 @@ sed -i 's/\r$//' star_align_two_pass.sbatch   # -i means in place, it can resolv
 sed '/HLA-B44:01/d' file   # delete the line containing 'HLA-B44:01'
 ```
 
+3. if file is saved from windows
+
+```bash
+sed -i 's/\r$//' downloadPDCData_11252025.py
+```
+
