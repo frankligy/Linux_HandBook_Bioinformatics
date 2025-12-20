@@ -25,10 +25,7 @@ split -l 273 --additional-suffix ".txt"
 
 ### 4. uniq
 ```bash
-# only unique lines
-uniq -u file.txt
-# only repeat lines
-uniq -d file.txt
+sort input.txt | uniq
 ```
 
 ### 5. shuf
