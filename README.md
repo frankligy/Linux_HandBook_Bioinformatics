@@ -41,5 +41,6 @@ https://towardsdatascience.com/linux-shell-commands-can-be-your-time-saver-eabee
 30. [SSH key](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/30_SSH.md)
 31. [Permission](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/31_permission.md)
 32. [docker, singularity](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/32_docker_singularity.md)
-33. stay tuned
+33. [UGE scheduler](https://github.com/frankligy/Linux_HandBook_Bioinformatics/blob/main/examples/32_UGE_job_scheduler.md)
+34. stay tuned
 
