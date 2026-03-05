@@ -16,9 +16,9 @@ ssh netID@crcfe02.crc.nd.edu
 ```bash
 # for home directory AFS disk: /users/netID
 quota
-# for scratch folder panasas disk: /scratch365/netID
+# for scratch folder panasas disk: /scratch365/netID, phased out
 pan_df -H /scratch365/your_login_id
-# new GBCF group and LTS
+# new GBCF group (15T) and LTS
 /groups/gbcf/
 /bluefs/gbcf/
 # old GBCF 
@@ -27,8 +27,8 @@ pan_df -H /scratch365/your_login_id
 # sequencer connect
 ssh lightsheetfs
 /data/BIO/illumina01/genomics
-# my lab space
-/placeholder
+# my lab space, 5T
+/groups/gli9
 ```
 
 ## UGE system
