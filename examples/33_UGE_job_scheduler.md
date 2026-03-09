@@ -19,17 +19,17 @@ ssh netID@crcfe02.crc.nd.edu
 quota
 # for scratch folder panasas disk: /scratch365/netID, phased out
 pan_df -H /scratch365/your_login_id
-# new GBCF group (15T) and LTS
-/groups/gbcf/
-/bluefs/gbcf/
-# old GBCF 
-/afs/crc/group/genomics/
-/afs/crc/group/Bioinformatics
+# new lab group and LTS
+/groups/lab_name
+/bluefs/lab_name
+# old lab group
+/afs/crc/group/gxxxs/
+/afs/crc/group/Bxxxxs
 # sequencer connect
 ssh lightsheetfs
-/data/BIO/illumina01/genomics
+/data/BIO/illumina01/gxxxs
 # my lab space, 5T
-/groups/gli9
+/groups/netID
 ```
 
 ## UGE system
