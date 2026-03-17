@@ -45,11 +45,17 @@ ssh lightsheetfs
 ```
 
 ```bash
+# interactive
+qrsh -q long -pe smp 1 -N test
+# just type exit to qdel
+```
+
+```bash
 qsub sub_all.script 
 qstat -u netID
 qstat -j job_id
 qdel -j job_id
-free_nodes.sh -G # check all available nodes
+free_nodes.sh -G # check all available nodes, gpu will be @crc_gpu
 ```
 
 ```bash
@@ -59,6 +65,18 @@ module list
 module purge
 module unload conda
 module load conda
+```
+
+```bash
+# gpu
+#!/bin/bash
+
+#$ -M netid@nd.edu   # Email address for job notification
+#$ -m abe            # Send mail when job begins, ends and aborts
+#$ -pe smp 1         # Specify parallel environment and legal core size
+#$ -q gpu            # Run on the GPU cluster
+#$ -l gpu_card=1     # Run on 1 GPU card
+#$ -N job_name       # Specify job name
 ```
 
 ```bash
