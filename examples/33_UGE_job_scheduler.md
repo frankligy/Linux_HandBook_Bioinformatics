@@ -45,11 +45,11 @@ ssh lightsheetfs
 ```
 
 ```bash
-qsub sub_all.job
+qsub sub_all.script 
 qstat -u netID
 qstat -j job_id
 qdel -j job_id
-free_nodes.sh -G
+free_nodes.sh -G # check all available nodes
 ```
 
 ```bash
