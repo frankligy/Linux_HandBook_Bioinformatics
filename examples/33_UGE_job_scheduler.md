@@ -53,6 +53,15 @@ free_nodes.sh -G # check all available nodes
 ```
 
 ```bash
+# module
+module avail conda
+module list
+module purge
+module unload conda
+module load conda
+```
+
+```bash
 #!/bin/bash
 
 #$ -pe smp 1           # Specify parallel environment and legal core size
