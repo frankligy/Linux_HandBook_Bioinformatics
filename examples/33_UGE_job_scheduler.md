@@ -38,14 +38,14 @@ ssh lightsheetfs
 #!/bin/bash
 
 #$ -M netid@nd.edu   # Email address for job notification
-#$ -m abe            # Send mail when job begins, ends and aborts
+#$ -m abe            # Send mail when job begins, ends and aborts, if no m and M, a combined stdout and stderr in current dir
 #$ -pe smp 24        # Specify parallel environment and legal core size
-#$ -q long           # Specify queue
+#$ -q long           # Specify queue, or largemem if need more than 256GB
 #$ -N job_name       # Specify job name
 ```
 
 ```bash
-# interactive
+# interactive, defualt 12 hours
 qrsh -q long -pe smp 1 -N test
 # just type exit to qdel
 ```
