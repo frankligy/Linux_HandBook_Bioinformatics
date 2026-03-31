@@ -5,6 +5,7 @@
 - [Doc](https://docs.crc.nd.edu/new_user/quick_start.html)
 - [VPN](https://nd.service-now.com/nd_portal?id=kb_article_view&sys_kb_id=d7d6b726c37b261033dc78fdd40131c1&spa=1#mcetoc_1h3i7t2u48)
 - [OnDemand](https://ondemand.crc.nd.edu)
+- [Permission](https://docs.crc.nd.edu/new_user/nfsv4_guide.html)
 - In-person office hours are available every Wednesday and Thursday from 2-3PM in 812 Flanner Hall
 - The maintenance period for CRC machines is from 2:00 - 10:00 A.M. each Sunday
 - GUI cyberduck
