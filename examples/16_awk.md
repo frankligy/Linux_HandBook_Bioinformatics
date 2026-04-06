@@ -5,14 +5,18 @@
 3. the string should be in double quatation
 
 ```bash
-awk -F "\t" '$3 ~ /ERV/' input.txt
+# by default, it can handle any whitespaces
+awk '$3 ~ /ERV/' input.txt
 
 awk '$5 !~ /^ENSG/' input_file.txt
 
 awk '$5 != "None"' input_file.txt
+
+awk '{print $1}' input_file.txt
 ```
 
 ```bash
+# long version
 awk 'BEGIN {OFS = "\t"} {if ($3 == "AAAWYLWEV" || $3 == "AAGLQDCTM" || $3 == "AARNIVRRA") {print $3, length($3),$2,$13, $15}}'
 ```
 
