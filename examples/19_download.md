@@ -100,6 +100,10 @@ sshpass -p 'password' sftp "email@server_host_domain:/folder/*" ./RNAseq
 10. Globus
 
 ```bash
+# ND data sharing side, since ND has its own collection, it's earsier
+# using institutional login for globus, find ND Center for Research Computing Collection for transfer, personal connect is optional I think
+# create guest collection on ND Center for Research Computing Collection, and then give permission and let them as access manager
+
 # created a globus ID using my ORCID, my UC email and also link my NYU email
 # basically two endpoints, set up my endpoint, grab server endpoint
 # my endpoint:
