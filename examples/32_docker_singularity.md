@@ -80,4 +80,8 @@ singularity shell --writable ./altanalyze
 # when pulling private docker image
 export SINGULARITY_DOCKER_USERNAME=frankligy123
 export SINGULARITY_DOCKER_PASSWORD=redacted
+
+# build sif for hard-to-install software on HPC
+# create .def file, see my nd example, or online
+singularity build my_software.sif ./file.def
 ```
