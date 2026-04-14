@@ -9,7 +9,11 @@
 cat test.txt | xargs -n 1 -P 10 -I {} bash -c "curl {}"
 cat test.txt | xargs -n 2 -P 10 -I {} bash -c "curl {}"   # if each row is one sample, n=2 will feed 2 rows to each core
 cat test2.txt | xargs -n 2 -P 10 -I {} bash -c "run {}"   # if each row has two samples, n=2 will feed each row as $1 and $2 to the core
- 
+cat test.txt | xargs -n 1 -P 10 -I {} bash -c '
+curl {}
+wget {}
+' # for more complexed ones
+
 # custom function
 function cutsom_function() {
     echo "hello $1"

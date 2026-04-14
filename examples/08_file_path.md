@@ -1,14 +1,10 @@
 ## manipulate file path
 
-
-Get basename
-
 ```
-basename -s .txt /path/sub/file.txt   # will be "file"
-basename -s .R1.fastq.gz path/sub/sample.R1.fastq.gz
+basename -s .R1.fastq.gz path/sub/sample.R1.fastq.gz # will be sample
+dirname /path/sub/file.txt  # will be /path/sub
+basename $(dirname /path/sub/file.txt) # will be sub, so basename will no suffix
 ```
-
-Get basename + abspath
 
 ```
 x='/path/sub/file.txt.gz'
