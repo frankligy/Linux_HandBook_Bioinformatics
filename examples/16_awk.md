@@ -13,6 +13,8 @@ awk '$5 !~ /^ENSG/' input_file.txt
 awk '$5 != "None"' input_file.txt
 
 awk '{print $1}' input_file.txt
+
+awk '$5 ~ /\([7-9]\/9\)/' input_file.txt # match (7/9) or (8/9) or (9/9)
 ```
 
 ```bash
