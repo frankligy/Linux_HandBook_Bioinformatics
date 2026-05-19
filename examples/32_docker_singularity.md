@@ -75,6 +75,7 @@ singularity run -B $PWD:/usr/src/app/run --writable altanalyze/ bam
 
 # For singularity interactive 
 singularity shell my_software.sif
+singularity shell -B $PWD:/usr/src/app/run my_software.sif
 singularity shell --writable ./altanalyze
 
 # when pulling private docker image
