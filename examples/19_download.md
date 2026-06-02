@@ -199,3 +199,21 @@ aws s3 ls s3:/path/to/their_folder --recursive
 aws s3 cp s3:/path/to/their_folder ./ --recursive
 ```
 
+16. rclone for all cloud storage
+
+```bash
+# Seems that rclone is super powerful for all kinds of cloud storage: https://rclone.org/docs/
+# Below use box as example, you can go to each specific document
+# on cloud storage side, if SSO, create a password in account setting
+conda install -c conda-forge rclone
+# download rclone, use conda or just download & install
+rclone config 
+# if I type box for the name, later you use this string to refer that 
+# use SSH to esetablish a connection, so that you use your local desktop's web browser for final authentification, method 3: https://rclone.org/remote_setup/
+# you have to do that on login node, because the remote_server you SSH should match the one you are configuring
+# there will be a copy for ~/.config/rclone/rclone.config
+rclone lsd box:"path/to/folder"
+rclone ls box:"path/to/folder"
+rclone copy box:"path/to/folder" ./hpc_folder -P # all sub-folder will be transferred, if organized, have to specify ./hpc_folder/folder
+```
+
