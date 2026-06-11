@@ -209,10 +209,10 @@ conda install -c conda-forge rclone
 # download rclone, use conda or just download & install
 rclone config 
 # if I type box for the name, later you use this string to refer that 
-# use SSH to esetablish a connection, so that you use your local desktop's web browser for final authentification, method 3: https://rclone.org/remote_setup/
+# use SSH to establish a tunnel connection, so that you use your local desktop's web browser for final authentification, method 3: https://rclone.org/remote_setup/
 # you have to do that on login node, because the remote_server you SSH should match the one you are configuring
 # there will be a copy for ~/.config/rclone/rclone.config
-rclone lsd box:"path/to/folder"
+rclone lsd box:"path/to/folder" # check folder structure on box, just go to root File, no need to have first /
 rclone ls box:"path/to/folder"
 rclone copy box:"path/to/folder" ./hpc_folder -P # all sub-folder will be transferred, if organized, have to specify ./hpc_folder/folder
 ```
