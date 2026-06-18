@@ -65,7 +65,7 @@ docker push cgc-images.sbgenomics.com/li2g2uc/altanalyze:0.0.1
 ## Singularity
 
 ```bash
-# build and run a read-only version
+# build and run a read-only version, build is a superset of pull as it can build from scratch as well
 singularity build my_software.sif docker://fred2/optitype
 singularity run -B $(pwd):/mnt my_software.sif -i ${sample}.1.fastq ${sample}.2.fastq --rna -v -o /mnt
 
@@ -85,4 +85,15 @@ export SINGULARITY_DOCKER_PASSWORD=redacted
 # build sif for hard-to-install software on HPC
 # create .def file, see my nd example, or online
 singularity build my_software.sif ./file.def
+
+# ultimate flexibility, bind the whole file system, borrow things from host
+# exec is different than run, run use the ENTRYPOINT you specified
+singularity exec \
+    --cleanenv \
+    --bind /gpfs:/gpfs \
+    --bind /usr/lib64/libgomp.so.1:/usr/lib/x86_64-linux-gnu/libgomp.so.1 \
+    /gpfs/data/yarmarkovichlab/Frank/test_ms/dotnet8-jammy.sif \
+    dotnet \
+    /gpfs/data/yarmarkovichlab/Frank/test_ms/MaxQuant_v2.6.7.0/bin/MaxQuantCmd.dll \
+    /gpfs/data/yarmarkovichlab/Frank/test_ms/immuno/PXD034772-C3N-02672_03-DIA/mqpar.xml
 ```
