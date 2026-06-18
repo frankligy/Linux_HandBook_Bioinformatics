@@ -70,6 +70,9 @@ singularity build my_software.sif docker://fred2/optitype
 singularity build --sandbox altanalyze/ docker://frankligy123/altanalyze:0.5.0.1
 singularity run -B $PWD:/usr/src/app/run --writable altanalyze/ bam
 
+# exec is different than run, run use the ENTRYPOINT you specified
+singularity exec -W /mnt -B $(pwd):/mnt ${OPTITYPE_SIF} /bin/bash -c "cd /mnt && /usr/local/bin/OptiType/OptiTypePipeline.py -i $(basename -s .gz ${FASTQ1}) $(basename -s .gz ${FASTQ2}) --${modality} -v -o /mnt"
+
 # For singularity interactive 
 singularity shell my_software.sif
 singularity shell -B $PWD:/usr/src/app/run my_software.sif
@@ -83,8 +86,7 @@ export SINGULARITY_DOCKER_PASSWORD=redacted
 # create .def file, see my nd example, or online
 singularity build my_software.sif ./file.def
 
-# ultimate flexibility, bind the whole file system, borrow things from host
-
+# another way when conda falls short of, ultimate flexibility, bind the whole file system, borrow things from host
 singularity exec \
     --cleanenv \
     --bind /gpfs:/gpfs \
@@ -93,7 +95,4 @@ singularity exec \
     dotnet \
     /gpfs/data/yarmarkovichlab/Frank/test_ms/MaxQuant_v2.6.7.0/bin/MaxQuantCmd.dll \
     /gpfs/data/yarmarkovichlab/Frank/test_ms/immuno/PXD034772-C3N-02672_03-DIA/mqpar.xml
-
-# exec is different than run, run use the ENTRYPOINT you specified
-singularity exec -W /mnt -B $(pwd):/mnt ${OPTITYPE_SIF} /bin/bash -c "cd /mnt && /usr/local/bin/OptiType/OptiTypePipeline.py -i $(basename -s .gz ${FASTQ1}) $(basename -s .gz ${FASTQ2}) --${modality} -v -o /mnt"
 ```
