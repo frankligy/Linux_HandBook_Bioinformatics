@@ -215,5 +215,6 @@ rclone config
 rclone lsd box:"path/to/folder" # check folder structure on box, just go to root File, no need to have first /
 rclone ls box:"path/to/folder"
 rclone copy box:"path/to/folder" ./hpc_folder -P # all sub-folder will be transferred, if organized, have to specify ./hpc_folder/folder
+rclone moveto box:"path/to/folder/or/file.txt" box:"des/folder/or/file.txt" -P
 ```
 
