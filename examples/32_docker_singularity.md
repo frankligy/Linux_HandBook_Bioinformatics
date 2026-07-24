@@ -86,7 +86,8 @@ export SINGULARITY_DOCKER_PASSWORD=redacted
 # create .def file, see my nd example, or online
 singularity build my_software.sif ./file.def
 
-# another way when conda falls short of, ultimate flexibility, bind the whole file system, borrow things from host
+# another way to build hard-to-install, pull a docker, bind the whole file system to borrow things from host
+singularity pull dotnet8-jammy.sif docker://mcr.microsoft.com/dotnet/sdk:8.0-jammy
 singularity exec \
     --cleanenv \
     --bind /gpfs:/gpfs \
