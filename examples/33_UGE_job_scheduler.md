@@ -40,7 +40,7 @@ ssh lightsheetfs
 
 #$ -M netid@nd.edu   # Email address for job notification
 #$ -m abe            # Send mail when job begins, ends and aborts, if no m and M, a combined stdout and stderr in current dir
-#$ -pe smp 24        # Specify parallel environment and legal core size
+#$ -pe smp 24        # Specify parallel environment and legal core size, 24-32 cores max
 #$ -q long           # Specify queue, or largemem if need more than 256GB
 #$ -N job_name       # Specify job name
 ```
