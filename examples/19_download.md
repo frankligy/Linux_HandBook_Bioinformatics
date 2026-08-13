@@ -1,6 +1,6 @@
 ## Common downloading scenario
 
-1. a FTP protocol, but no login credential
+1. a FTP protocol
 
 ```bash
 wget -r -l1 --no-parent ftp://massive.ucsd.edu/MSV000080527/raw/RAW/B5101/
@@ -8,6 +8,8 @@ wget -r -l1 --no-parent ftp://massive.ucsd.edu/MSV000080527/raw/RAW/B5101/
 # -r recursive, this can download a folder
 # -l1 maximum depth is 1
 # --no-parent don't ascend to parental folder
+
+wget -r --ftp-user=username --ftp-password=password ftp://xxx.xxx.xx.xx:PORT
 ```
 
 2. FTP protocol, single file
@@ -85,7 +87,7 @@ In terms of path mapping, you may need to figure out how the filename is encoded
 
 9. download from sftp server
 
-You should first use `sftp`` command to get a sense of the server structure, imagine the username is my email, so I can do the following, I just need to get the folder and file name for programmatical download.
+You should first use ``sftp`` command to get a sense of the server structure, imagine the username is my email, so I can do the following, I just need to get the folder and file name for programmatical download.
 
 ```bash
 sftp email@server_host_domain
