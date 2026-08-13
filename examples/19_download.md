@@ -3,11 +3,13 @@
 1. a FTP protocol
 
 ```bash
-wget -r -l1 --no-parent ftp://massive.ucsd.edu/MSV000080527/raw/RAW/B5101/
+wget -r -nH -np --no-parent --cut-dirs=2 -l1 ftp://massive.ucsd.edu/MSV000080527/raw/RAW/B5101/
 
 # -r recursive, this can download a folder
-# -l1 maximum depth is 1
-# --no-parent don't ascend to parental folder
+# -np don't download anything from /MSV000080527/raw/RAW besides /B5101
+# -l1 maximum depth is 1 in B5101
+# -nH don't download massive.ucsd.edu
+# --cut-dirs=2, locally how the dir is organized, won't have /raw/RAW
 
 wget -r --ftp-user=username --ftp-password=password ftp://xxx.xxx.xx.xx:PORT
 ```
