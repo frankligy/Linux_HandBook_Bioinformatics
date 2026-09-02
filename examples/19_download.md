@@ -212,7 +212,7 @@ aws s3 cp s3:/path/to/their_folder ./ --recursive
 conda install -c conda-forge rclone
 # download rclone, use conda or just download & install
 rclone config 
-# if I type box for the name, later you use this string to refer that 
+# if I type box for the name, later you use this string to refer that, other just follow the prompt
 # use SSH to establish a tunnel connection, so that you use your local desktop's web browser for final authentification, method 3: https://rclone.org/remote_setup/
 # while I thought you have to do on login node, seems submitting job is also fine, you only need to configure once and the configuration is saved
 # there will be a copy for ~/.config/rclone/rclone.config
