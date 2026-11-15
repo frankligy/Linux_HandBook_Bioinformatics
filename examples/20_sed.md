@@ -24,3 +24,10 @@ sed '/HLA-B44:01/d' file   # delete the line containing 'HLA-B44:01'
 sed -i 's/\r$//' downloadPDCData_11252025.py
 ```
 
+4. change the line 
+
+```bash
+new_line="directory=${DIR}/${TASK}"
+sed -i "8c $new_line" /path/settings_frank2_run.ini
+```
+
